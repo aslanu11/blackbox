@@ -1,0 +1,120 @@
+/* Design tokens — LOCKED (spec §12). Implement, don't reinterpret.
+ *
+ * Concept: a flight data recorder crossed with a race engineer's pit-wall
+ * telemetry screen. The joke and the brand: real "black boxes" are orange.
+ * Everything on the page behaves like recovered instrument data, not a
+ * marketing site.
+ *
+ * If you want a colour that isn't here, you don't. The only saturated colours
+ * on screen besides --recorder-orange are the per-fight bot identity colours,
+ * which come from FightMeta at runtime.
+ */
+
+:root {
+  /* Surfaces — graphite, not pure black */
+  --bg: #101418;
+  --panel: #171d23;
+  --line: #2a333c;
+
+  /* THE accent. Playhead, live values, the REC dot. Nothing else. */
+  --recorder-orange: #ff5a1f;
+
+  /* Ink */
+  --ink: #e8ecef;
+  --ink-dim: #8b98a5;
+
+  /* Bot identity colours are set per fight from FightMeta, e.g.
+   *   --bot-0: #D4AF37;  --bot-1: #1E6FD9;
+   * Do not hard-code them in components. */
+
+  /* Type */
+  --font-display: "Saira Condensed", system-ui, sans-serif; /* 700, uppercase, tight */
+  --font-data: "IBM Plex Mono", ui-monospace, monospace;    /* every number */
+  --font-body: "Barlow", system-ui, sans-serif;             /* 400/500 */
+
+  --radius: 4px;
+  --hairline: 1px solid var(--line);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  /* Density is high. This is an instrument, not a landing page. */
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+/* All numbers, timestamps and channel labels. Tabular, so digits don't jitter
+ * as the playhead moves. */
+.data,
+.channel-label,
+time {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+}
+
+.panel {
+  background: var(--panel);
+  border: var(--hairline);
+  border-radius: var(--radius);
+  /* No shadows. A 1px inner edge is the only depth cue. */
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 4%);
+}
+
+.dim {
+  color: var(--ink-dim);
+}
+
+/* Coverage gaps. Honesty as aesthetic: where we have no data, we draw the
+ * absence rather than interpolating across it. */
+.gap-hatch {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0 3px,
+    var(--line) 3px 4px
+  );
+}
+
+:focus-visible {
+  outline: 2px solid var(--recorder-orange);
+  outline-offset: 2px;
+}
+
+/* Motion: the playhead moves and the REC dot blinks. Nothing else animates. */
+@keyframes rec-blink {
+  0%, 45% { opacity: 1; }
+  55%, 100% { opacity: 0.15; }
+}
+
+.rec-dot {
+  color: var(--recorder-orange);
+  animation: rec-blink 1.6s steps(1, end) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

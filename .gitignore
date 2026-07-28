@@ -1,0 +1,54 @@
+# --- Never commit media or raw data (§2.1) ---
+data/raw/
+data/frames/
+data/llm_cache/
+data/fetch_log.jsonl
+media/
+frames/
+*.mp4
+*.mkv
+*.webm
+*.mov
+*.avi
+*.m4a
+*.wav
+*.info.json
+web/public/data/*.mp4
+
+# --- Secrets ---
+.env
+.env.local
+*.pem
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Node ---
+node_modules/
+web/dist/
+web/.vite/
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+
+# Derived JSON stats and small PNG charts ARE committable (our work product).
+# data/processed/ is therefore NOT ignored wholesale — only media inside it.
+data/processed/**/*.mp4
+
+# The fixture is deterministic and regenerates in under a second with
+# `bb fixture`. Committing 280 KB of synthetic tracks would just be noise.
+data/processed/fixture-001/
