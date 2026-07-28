@@ -137,7 +137,9 @@ def fetch(fight_id: FightId) -> None:
 @app.command()
 def ingest(fight_id: FightId) -> None:
     """D1 - cut the fight clip and extract frames at 10 fps (+1 fps keyframes)."""
-    _todo("ingest")
+    from .pipeline import ingest as _ingest
+
+    _ingest.extract(fight_id)
 
 
 @app.command()
@@ -146,7 +148,9 @@ def shots(
     heuristic: Annotated[bool, typer.Option("--heuristic", help="Skip the LLM; use frame-diff variance.")] = False,
 ) -> None:
     """D2 - scene detection + wide-shot classification -> shots.json."""
-    _todo("shots")
+    from .pipeline import shots as _shots
+
+    _shots.detect(fight_id, heuristic=heuristic)
 
 
 @app.command()
@@ -155,7 +159,9 @@ def calibrate(
     check: Annotated[bool, typer.Option("--check", help="Overlay the projected floor grid instead.")] = False,
 ) -> None:
     """D3 - click 4+ known floor points -> homography -> calibration.json."""
-    _todo("calibrate")
+    from .pipeline import calibrate as _calibrate
+
+    _calibrate.calibrate(fight_id, check=check)
 
 
 @app.command()
@@ -164,7 +170,9 @@ def track(
     review: Annotated[bool, typer.Option("--review", help="Render a side-by-side to eyeball.")] = False,
 ) -> None:
     """D4 - CSRT tracking per wide shot -> tracks.json (gaps stay explicit)."""
-    _todo("track")
+    from .pipeline import track as _track
+
+    _track.track(fight_id, review=review)
 
 
 @app.command()
@@ -241,7 +249,9 @@ def fuse(fight_id: FightId = "") -> None:
 @app.command()
 def overlay(fight_id: FightId) -> None:
     """D5 - burn trails / hit flashes / momentum needle into overlay.mp4."""
-    _todo("overlay")
+    from .pipeline import overlay as _overlay
+
+    _overlay.render(fight_id)
 
 
 @app.command()

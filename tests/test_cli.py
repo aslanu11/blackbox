@@ -27,8 +27,16 @@ def test_fixture_command_runs():
     assert result.exit_code == 0, result.output
 
 
+#: Phase D (Pranav) subcommands whose bodies are implemented — see their own
+#: acceptance tests (test_ingest.py, test_shots.py, test_calibrate.py,
+#: test_track.py) instead of the generic "still a stub" check below.
+IMPLEMENTED = {"ingest", "shots", "calibrate", "track", "overlay"}
+
+
 def test_unimplemented_commands_exit_two_and_name_an_owner():
     for cmd, (phase, owner) in OWNERS.items():
+        if cmd in IMPLEMENTED:
+            continue
         result = runner.invoke(app, [cmd, "--fight-id", "fixture-001"])
         assert result.exit_code == 2, f"`bb {cmd}` should exit 2 until implemented"
         assert owner in result.output
