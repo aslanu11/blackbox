@@ -1,0 +1,23 @@
+{
+  "fight_id": "pl-e04-f2",
+  "episode": 4,
+  "bots": [
+    "Bloodsport",
+    "Minotaur"
+  ],
+  "colors": {
+    "Bloodsport": "#1E6FD9",
+    "Minotaur": "#D4AF37"
+  },
+  "result": {
+    "winner": null,
+    "method": null,
+    "time_s": null
+  },
+  "video": {
+    "yt_id": "xOOMHMxjsXg",
+    "fight_start_s": 745.0,
+    "fight_end_s": 869.0
+  },
+  "role": "hero"
+}

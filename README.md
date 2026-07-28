@@ -71,12 +71,20 @@ On Windows, use `.venv\Scripts\` instead of `.venv/bin/`. If you don't have
 
 ### Real fights
 
-Filling `data/manifest.yaml` with YouTube ids and fight offsets, downloading
-footage, and clicking the calibration points are human steps. See
-[TEAM.md](TEAM.md).
+`data/manifest.yaml` carries the fight registry (YouTube ids + fight offsets,
+sourced from the episodes' own chapter markers). Downloading footage and
+clicking calibration points are human steps. See [TEAM.md](TEAM.md).
 
 ```bash
-bb run --fight-id pl-e04-f2
+bb sync
+```
+
+```bash
+bb fetch --fight-id pl-e01-f2
+```
+
+```bash
+bb run --fight-id pl-e01-f2
 ```
 
 ---

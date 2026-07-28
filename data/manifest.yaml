@@ -1,28 +1,33 @@
 # The fight registry — the ONLY hand-edited data file (spec §10).
 # role: hero (full CV) | proleague (results/attention) | corpus (cheap-lane scorecard)
 #
-# Filling yt_id / fight_start_s / fight_end_s is a HUMAN task (spec §9.1).
-# `bb fetch` is human-triggered; never auto-download in tests or CI (§9.2).
+# `bb sync` materializes these into data/processed/<fight_id>/meta.json.
+# yt_ids verified 28 Jul via yt-dlp metadata. fight offsets come from the
+# episodes' own YouTube chapter markers — trim after eyeballing if needed.
+# winner/method/time_s: fill when known (fandom is 403-blocked on the plain
+# fetch path; retry `blackbox.sources.wiki` once the Bright Data token is in
+# .env, or fill by watching).
 
 fights:
   # --- Synthetic. Always present. Needs no network and no footage. ---
   - {fight_id: fixture-001, episode: 0, bots: [Minotaur, Bloodsport], role: hero, synthetic: true}
 
-  # --- Hero fights (full CV lane) ---
-  # HUGE is the easiest CV target in the sport — big, slow, high contrast.
-  - {fight_id: pl-e01-f2, episode: 1, bots: [HyperShock, HUGE],     role: hero, yt_id: TODO, fight_start_s: TODO, fight_end_s: TODO}
-  # Hazard drama per the official teasers.
-  - {fight_id: pl-e04-f2, episode: 4, bots: [Bloodsport, Minotaur], role: hero, yt_id: TODO, fight_start_s: TODO, fight_end_s: TODO}
+  # --- Episode 1 (yt rPvv0PN2wKs, 21:38, HAS most-replayed heatmap + chapters) ---
+  # Hero: HUGE is the easiest CV target in the sport, and this episode is the
+  # only one with attention data so far -> full three-lane demo lives here.
+  - {fight_id: pl-e01-f2, episode: 1, bots: [HyperShock, HUGE],       role: hero,      yt_id: rPvv0PN2wKs, fight_start_s: 630, fight_end_s: 837}
+  - {fight_id: pl-e01-f1, episode: 1, bots: [DeathRoll, Golden Fury], role: proleague, yt_id: rPvv0PN2wKs, fight_start_s: 120, fight_end_s: 415}
+  - {fight_id: pl-e01-f3, episode: 1, bots: [End Game, Malice],       role: proleague, yt_id: rPvv0PN2wKs, fight_start_s: 984, fight_end_s: 1248}
 
-  # --- Pro League (results + attention only, no tracking) ---
-  - {fight_id: pl-e01-f1, episode: 1, bots: [DeathRoll, Golden Fury],  role: proleague, yt_id: TODO}
-  - {fight_id: pl-e01-f3, episode: 1, bots: [End Game, Malice],        role: proleague, yt_id: TODO}
-  - {fight_id: pl-e04-f1, episode: 4, bots: [Orbitron, Witch Doctor],  role: proleague, yt_id: TODO}
-  - {fight_id: pl-e04-f3, episode: 4, bots: [Cobalt, The Twins],       role: proleague, yt_id: TODO}
+  # --- Episode 4 (yt xOOMHMxjsXg, 24:57, chapters but NO heatmap yet) ---
+  # Hero fight gets CV telemetry; its attention lane stays honestly empty
+  # until YouTube publishes the heatmap.
+  - {fight_id: pl-e04-f2, episode: 4, bots: [Bloodsport, Minotaur],    role: hero,      yt_id: xOOMHMxjsXg, fight_start_s: 745, fight_end_s: 869}
+  - {fight_id: pl-e04-f3, episode: 4, bots: [Cobalt, The Twins],       role: proleague, yt_id: xOOMHMxjsXg, fight_start_s: 281, fight_end_s: 471}
+  - {fight_id: pl-e04-f1, episode: 4, bots: [Orbitron, Witch Doctor],  role: proleague, yt_id: xOOMHMxjsXg, fight_start_s: 1212, fight_end_s: 1275}
 
-  # Episodes 2–3 fight cards: fill from battlebots.fandom.com episode pages.
-  # C3 (sources/wiki.py) can auto-suggest patches once it lands.
+  # Episodes 2–3 fight cards: fill from battlebots.fandom.com episode pages
+  # once the Bright Data token unblocks the scrape (wiki.episode_card).
 
-  # --- Corpus: 8–12 judges'-decision fights, 2021–2023, footage on the official
-  # channel. Prefer fan-alleged robberies — they are the Robbery Leaderboard.
-  # Human fills. ---
+  # --- Corpus: 8–12 judges'-decision fights from 2021–2023 with footage on
+  # the official channel — prefer fan-alleged robberies. Human fills. ---

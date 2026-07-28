@@ -1,0 +1,23 @@
+{
+  "fight_id": "pl-e01-f3",
+  "episode": 1,
+  "bots": [
+    "End Game",
+    "Malice"
+  ],
+  "colors": {
+    "End Game": "#27AE60",
+    "Malice": "#E67E22"
+  },
+  "result": {
+    "winner": null,
+    "method": null,
+    "time_s": null
+  },
+  "video": {
+    "yt_id": "rPvv0PN2wKs",
+    "fight_start_s": 984.0,
+    "fight_end_s": 1248.0
+  },
+  "role": "proleague"
+}

@@ -1,0 +1,23 @@
+{
+  "fight_id": "pl-e01-f1",
+  "episode": 1,
+  "bots": [
+    "DeathRoll",
+    "Golden Fury"
+  ],
+  "colors": {
+    "DeathRoll": "#16A085",
+    "Golden Fury": "#F1C40F"
+  },
+  "result": {
+    "winner": null,
+    "method": null,
+    "time_s": null
+  },
+  "video": {
+    "yt_id": "rPvv0PN2wKs",
+    "fight_start_s": 120.0,
+    "fight_end_s": 415.0
+  },
+  "role": "proleague"
+}

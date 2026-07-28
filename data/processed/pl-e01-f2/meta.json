@@ -1,0 +1,23 @@
+{
+  "fight_id": "pl-e01-f2",
+  "episode": 1,
+  "bots": [
+    "HyperShock",
+    "HUGE"
+  ],
+  "colors": {
+    "HyperShock": "#2FBF71",
+    "HUGE": "#8CC63E"
+  },
+  "result": {
+    "winner": null,
+    "method": null,
+    "time_s": null
+  },
+  "video": {
+    "yt_id": "rPvv0PN2wKs",
+    "fight_start_s": 630.0,
+    "fight_end_s": 837.0
+  },
+  "role": "hero"
+}

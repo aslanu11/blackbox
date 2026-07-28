@@ -1,0 +1,23 @@
+{
+  "fight_id": "pl-e04-f3",
+  "episode": 4,
+  "bots": [
+    "Cobalt",
+    "The Twins"
+  ],
+  "colors": {
+    "Cobalt": "#2980B9",
+    "The Twins": "#E74C3C"
+  },
+  "result": {
+    "winner": null,
+    "method": null,
+    "time_s": null
+  },
+  "video": {
+    "yt_id": "xOOMHMxjsXg",
+    "fight_start_s": 281.0,
+    "fight_end_s": 471.0
+  },
+  "role": "proleague"
+}

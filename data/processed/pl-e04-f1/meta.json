@@ -1,0 +1,23 @@
+{
+  "fight_id": "pl-e04-f1",
+  "episode": 4,
+  "bots": [
+    "Orbitron",
+    "Witch Doctor"
+  ],
+  "colors": {
+    "Orbitron": "#9B59B6",
+    "Witch Doctor": "#C0392B"
+  },
+  "result": {
+    "winner": null,
+    "method": null,
+    "time_s": null
+  },
+  "video": {
+    "yt_id": "xOOMHMxjsXg",
+    "fight_start_s": 1212.0,
+    "fight_end_s": 1275.0
+  },
+  "role": "proleague"
+}

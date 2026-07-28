@@ -1,21 +1,111 @@
 {
   "bots": [
     {
-      "name": "Minotaur",
+      "name": "DeathRoll",
       "fights": 1,
-      "screen_s": 120.0,
+      "screen_s": 295.0,
+      "attn_index": 4.06,
+      "media_value": 1198.0,
+      "record": "0-0",
+      "perf_score": 0.0
+    },
+    {
+      "name": "Golden Fury",
+      "fights": 1,
+      "screen_s": 295.0,
+      "attn_index": 4.06,
+      "media_value": 1198.0,
+      "record": "0-0",
+      "perf_score": 0.0
+    },
+    {
+      "name": "HyperShock",
+      "fights": 1,
+      "screen_s": 207.0,
+      "attn_index": 4.27,
+      "media_value": 884.1,
+      "record": "0-0",
+      "perf_score": 0.0
+    },
+    {
+      "name": "HUGE",
+      "fights": 1,
+      "screen_s": 207.0,
+      "attn_index": 4.27,
+      "media_value": 884.1,
+      "record": "0-0",
+      "perf_score": 0.0
+    },
+    {
+      "name": "End Game",
+      "fights": 1,
+      "screen_s": 264.0,
+      "attn_index": 2.95,
+      "media_value": 778.1,
+      "record": "0-0",
+      "perf_score": 0.0
+    },
+    {
+      "name": "Malice",
+      "fights": 1,
+      "screen_s": 264.0,
+      "attn_index": 2.95,
+      "media_value": 778.1,
+      "record": "0-0",
+      "perf_score": 0.0
+    },
+    {
+      "name": "Minotaur",
+      "fights": 2,
+      "screen_s": 244.0,
       "attn_index": 1.54,
-      "media_value": 184.4,
+      "media_value": 375.0,
       "record": "1-0",
       "perf_score": 1.0
     },
     {
       "name": "Bloodsport",
-      "fights": 1,
-      "screen_s": 120.0,
+      "fights": 2,
+      "screen_s": 244.0,
       "attn_index": 1.54,
-      "media_value": 184.4,
+      "media_value": 375.0,
       "record": "0-1",
+      "perf_score": 0.0
+    },
+    {
+      "name": "Orbitron",
+      "fights": 1,
+      "screen_s": 63.0,
+      "attn_index": 0.0,
+      "media_value": 0.0,
+      "record": "0-0",
+      "perf_score": 0.0
+    },
+    {
+      "name": "Witch Doctor",
+      "fights": 1,
+      "screen_s": 63.0,
+      "attn_index": 0.0,
+      "media_value": 0.0,
+      "record": "0-0",
+      "perf_score": 0.0
+    },
+    {
+      "name": "Cobalt",
+      "fights": 1,
+      "screen_s": 190.0,
+      "attn_index": 0.0,
+      "media_value": 0.0,
+      "record": "0-0",
+      "perf_score": 0.0
+    },
+    {
+      "name": "The Twins",
+      "fights": 1,
+      "screen_s": 190.0,
+      "attn_index": 0.0,
+      "media_value": 0.0,
+      "record": "0-0",
       "perf_score": 0.0
     }
   ]

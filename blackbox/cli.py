@@ -96,6 +96,16 @@ def doctor() -> None:
 
 
 @app.command()
+def sync() -> None:
+    """Materialize data/manifest.yaml into per-fight meta.json artifacts."""
+    from . import manifest
+
+    for fid in manifest.sync():
+        typer.echo(f"  meta      -> {fid}")
+    typer.secho("manifest synced.", fg=typer.colors.GREEN)
+
+
+@app.command()
 def fights() -> None:
     """List fights that have artifacts on disk."""
     from . import schemas as S
