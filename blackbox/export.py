@@ -13,6 +13,8 @@ from __future__ import annotations
 
 import json
 import shutil
+import subprocess
+import sys
 from pathlib import Path
 
 from . import schemas as S
@@ -35,6 +37,36 @@ _FILES = (
 )
 
 
+def _copy_video(src: Path, dst: Path) -> None:
+    """Ship the overlay as browser-playable H.264.
+
+    OpenCV's VideoWriter emits mp4v (MPEG-4 part 2), which <video> cannot
+    decode in any current browser - the page shows a dead player with no
+    error. Transcode on export when ffmpeg is available; otherwise copy
+    as-is and warn. Skipped when the destination is already up to date.
+    """
+    if dst.exists() and dst.stat().st_mtime >= src.stat().st_mtime:
+        return
+    if shutil.which("ffmpeg"):
+        proc = subprocess.run(
+            [
+                "ffmpeg", "-y", "-v", "error",
+                "-i", str(src),
+                "-c:v", "libx264", "-preset", "veryfast", "-crf", "23",
+                "-pix_fmt", "yuv420p", "-movflags", "+faststart",
+                str(dst),
+            ],
+            capture_output=True,
+            text=True,
+        )
+        if proc.returncode == 0:
+            return
+        print(f"  [export] ffmpeg transcode failed, copying raw: {proc.stderr[-300:]}", file=sys.stderr)
+    else:
+        print("  [export] warning: ffmpeg not found - overlay copied as mp4v and will NOT play in a browser", file=sys.stderr)
+    shutil.copy2(src, dst)
+
+
 def export(fight_id: str | None = None) -> Path:
     """Copy artifacts for one fight (or all) and rebuild index.json."""
     fights = [fight_id] if fight_id else S.list_fights()
@@ -46,7 +78,11 @@ def export(fight_id: str | None = None) -> Path:
         dst = WEB_DATA / fid
         dst.mkdir(parents=True, exist_ok=True)
         for name in _FILES:
-            if (src / name).exists():
+            if not (src / name).exists():
+                continue
+            if name.endswith(".mp4"):
+                _copy_video(src / name, dst / name)
+            else:
                 shutil.copy2(src / name, dst / name)
         # Heatmap PNGs are named per bot - copy whatever exists.
         for png in src.glob("*.png"):

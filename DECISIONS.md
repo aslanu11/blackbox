@@ -216,6 +216,24 @@ explicitly) rather than trusting install order.
 
 ---
 
+## 2026-07-28 — Overlay ships to the web as H.264, transcoded at export
+
+**What:** `export.py` transcodes `overlay.mp4` with ffmpeg
+(`libx264 -crf 23 -movflags +faststart`) when copying into `web/public/data/`,
+cached by mtime. Without ffmpeg it copies raw and prints a loud warning.
+
+**Why:** D5 writes through OpenCV's `VideoWriter`, whose `mp4v` fourcc is
+MPEG-4 part 2 — no current browser decodes it, so the page showed a dead
+player with no error (readyState 0). Transcoding at the export seam keeps
+overlay.py free to use whatever writer is convenient, and shrank the fixture
+overlay 76 MB → 33 MB as a bonus. Verified in-browser: readyState 4, seek
+works.
+
+**Revisit if:** export ever becomes the demo bottleneck — then write H.264
+directly in D5 instead and drop the transcode.
+
+---
+
 ## TEMPLATE — copy this
 
 ## YYYY-MM-DD — <one-line decision>
