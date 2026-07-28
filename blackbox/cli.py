@@ -26,13 +26,10 @@ FightId = Annotated[str, typer.Option("--fight-id", "-f", help="Fight id from da
 #: Remove a command from this dict when you implement it - test_cli asserts
 #: that everything listed here exits 2 with the owner's name.
 OWNERS: dict[str, tuple[str, str]] = {
-    "fetch": ("C2", "Aslan"),
     "ingest": ("D1", "Pranav"),
     "shots": ("D2", "Pranav"),
     "calibrate": ("D3", "Pranav"),
     "track": ("D4", "Pranav"),
-    "scorecard": ("B4", "Aslan"),
-    "attention": ("C2", "Aslan"),
     "overlay": ("D5", "Pranav"),
 }
 
@@ -125,9 +122,16 @@ def fights() -> None:
 
 
 @app.command()
-def fetch(fight_id: FightId = "") -> None:
-    """C2 - download footage / video info for a fight. Human-triggered only."""
-    _todo("fetch")
+def fetch(fight_id: FightId) -> None:
+    """C2 - download footage for a fight. Human-triggered only, never in tests."""
+    from . import schemas as S
+    from .sources import yt
+
+    meta = S.load_meta(fight_id)
+    if not meta.video.yt_id:
+        typer.secho(f"{fight_id}: no yt_id in the manifest yet (human task).", fg=typer.colors.RED, err=True)
+        raise typer.Exit(code=1)
+    typer.echo(f"  video     -> {yt.download(meta.video.yt_id)}")
 
 
 @app.command()
@@ -207,13 +211,21 @@ def scorecard(
     leaderboard: Annotated[bool, typer.Option("--leaderboard", help="Aggregate the Robbery Leaderboard.")] = False,
 ) -> None:
     """B4 - rubric model vs official verdict -> scorecard.json."""
-    _todo("scorecard")
+    from .pipeline import scorecard as mod
+
+    if fight_id:
+        typer.echo(f"  scorecard -> {mod.score(fight_id)}")
+    if leaderboard or not fight_id:
+        json_path, csv_path = mod.leaderboard()
+        typer.echo(f"  leaderboard -> {json_path} + {csv_path}")
 
 
 @app.command()
 def attention(fight_id: FightId) -> None:
     """C2 - pull the YouTube most-replayed heatmap -> attention.json."""
-    _todo("attention")
+    from .sources import yt
+
+    typer.echo(f"  attention -> {yt.attention_for_fight(fight_id)}")
 
 
 @app.command()
@@ -242,14 +254,25 @@ def export(fight_id: FightId = "") -> None:
 
 @app.command()
 def run(fight_id: FightId) -> None:
-    """Full pipeline for one fight: ingest -> ... -> overlay."""
-    typer.secho(
-        "`bb run` chains ingest -> shots -> track -> telemetry -> events -> "
-        "momentum -> fuse -> overlay. It lands once those exist (F1).",
-        fg=typer.colors.YELLOW,
-        err=True,
-    )
-    raise typer.Exit(code=2)
+    """Full pipeline for one fight: ingest -> ... -> overlay -> export.
+
+    Steps whose phase isn't implemented yet stop the run with the owner's name.
+    Human-interactive steps (calibrate, first-frame clicks) surface from the
+    D modules themselves.
+    """
+    from typer.testing import CliRunner  # reuse each command's own wiring
+
+    steps = ["ingest", "shots", "calibrate", "track", "telemetry", "events",
+             "momentum", "scorecard", "fuse", "overlay", "export"]
+    runner = CliRunner()
+    for step in steps:
+        typer.secho(f"== bb {step}", fg=typer.colors.CYAN)
+        result = runner.invoke(app, [step, "--fight-id", fight_id], catch_exceptions=False)
+        typer.echo(result.output.rstrip())
+        if result.exit_code != 0:
+            typer.secho(f"stopped at `bb {step}` (exit {result.exit_code}).", fg=typer.colors.RED, err=True)
+            raise typer.Exit(code=result.exit_code)
+    typer.secho(f"{fight_id}: full pipeline complete.", fg=typer.colors.GREEN)
 
 
 if __name__ == "__main__":

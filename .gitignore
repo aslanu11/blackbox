@@ -52,3 +52,6 @@ data/processed/**/*.mp4
 # The fixture is deterministic and regenerates in under a second with
 # `bb fixture`. Committing 280 KB of synthetic tracks would just be noise.
 data/processed/fixture-001/
+
+# Exported web data is derived - bb export regenerates it.
+web/public/data/

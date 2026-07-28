@@ -22,12 +22,15 @@ fixture:
 	$(BB) fixture
 
 ## The whole machine, end to end, on synthetic data. No network, no footage.
+## The overlay step is tolerated until D5 lands (the `-` prefix); everything
+## else must be green.
 demo-fixture: fixture
 	$(BB) telemetry --fight-id fixture-001
 	$(BB) events    --fight-id fixture-001
 	$(BB) momentum  --fight-id fixture-001
+	$(BB) scorecard --fight-id fixture-001
 	$(BB) fuse      --fight-id fixture-001
-	$(BB) overlay   --fight-id fixture-001
+	-$(BB) overlay  --fight-id fixture-001
 	$(BB) export
 	@echo ""
 	@echo "  Fixture pipeline complete. Now:  cd web && npm run dev"

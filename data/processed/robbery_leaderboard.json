@@ -1,0 +1,12 @@
+{
+  "fights": [
+    {
+      "fight_id": "fixture-001",
+      "bots": "Minotaur vs Bloodsport",
+      "our_winner": "Minotaur",
+      "official_winner": "Minotaur",
+      "split": null,
+      "robbery_score": 0.0
+    }
+  ]
+}
