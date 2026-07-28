@@ -104,6 +104,41 @@ detectable would not be evidence that the detector works.
 
 ---
 
+## 2026-07-28 — Mobility index: rolling p90 over self-baseline, not rolling-30s max
+
+**What:** `telemetry.mobility_series` uses a rolling 10 s 90th-percentile of
+speed, divided by the median of that same statistic over the bot's first 60 s.
+Windows less than half-full of real frames emit NaN. The spec sketched
+"rolling-30s max ÷ first-60s baseline".
+
+**Why:** Measured on the fixture, the rolling-30s max detects bot B's scripted
+decay 40 s late — a knockdown rebound (the t=108 hit throws B at ~2.2 m/s)
+parks a stale maximum in the window for its full 30 s length. It also reads
+garbage right after camera-cut gaps, when the window holds two frames.
+Numerator and denominator now use the *same* statistic, so hit rebounds and
+quiet wander phases inflate or deflate both equally. With sustained-crossing +
+backdating, decay onset lands at 101.9 vs scripted 100 (spec asks ±5 s), with
+no false onset on the healthy bot. Contract unchanged — telemetry.json shape
+is identical; this is internal math.
+
+**Revisit if:** real footage shows mobility flapping — then raise
+MOBILITY_WINDOW_S before touching the percentile.
+
+---
+
+## 2026-07-28 — Hit time = closest approach, not the biggest |dv| frame
+
+**What:** `events.detect_hits` places each hit at the minimum-separation frame
+within the spike burst, not at the burst's |dv| argmax.
+
+**Why:** The rebound tail decelerates hard and can out-spike the impact
+itself; on the fixture that put two hits 2.2 s late, which also dragged their
+attention `event_lift` below threshold (the bump is centred on the true
+contact). Closest approach is the physical definition of contact and recovers
+all five scripted hits within ±0.5 s.
+
+---
+
 ## TEMPLATE — copy this
 
 ## YYYY-MM-DD — <one-line decision>

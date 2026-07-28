@@ -22,19 +22,17 @@ app = typer.Typer(
 
 FightId = Annotated[str, typer.Option("--fight-id", "-f", help="Fight id from data/manifest.yaml.")]
 
-#: subcommand -> (phase, owner). Mirrors TEAM.md; keep them in sync.
+#: STILL-UNIMPLEMENTED subcommand -> (phase, owner). Mirrors TEAM.md.
+#: Remove a command from this dict when you implement it - test_cli asserts
+#: that everything listed here exits 2 with the owner's name.
 OWNERS: dict[str, tuple[str, str]] = {
     "fetch": ("C2", "Aslan"),
     "ingest": ("D1", "Pranav"),
     "shots": ("D2", "Pranav"),
     "calibrate": ("D3", "Pranav"),
     "track": ("D4", "Pranav"),
-    "telemetry": ("B1", "Aslan"),
-    "events": ("B2", "Aslan"),
-    "momentum": ("B3", "Aslan"),
     "scorecard": ("B4", "Aslan"),
     "attention": ("C2", "Aslan"),
-    "fuse": ("B5", "Aslan"),
     "overlay": ("D5", "Pranav"),
     "export": ("E4", "Aslan"),
 }
@@ -169,13 +167,21 @@ def track(
 @app.command()
 def telemetry(fight_id: FightId) -> None:
     """B1 - speed / control / mobility / heatmaps -> telemetry.json."""
-    _todo("telemetry")
+    from .pipeline import telemetry as mod
+
+    typer.echo(f"  telemetry -> {mod.compute(fight_id)}")
 
 
 @app.command()
 def events(fight_id: FightId) -> None:
     """B2 - hit / KO / hazard detection -> events.json."""
-    _todo("events")
+    from .pipeline import events as mod
+
+    path = mod.detect(fight_id)
+    from . import schemas as S
+
+    ev = S.load_events(fight_id)
+    typer.echo(f"  events    -> {path} ({len(ev.events)} events)")
 
 
 @app.command()
@@ -184,7 +190,16 @@ def momentum(
     calibrate: Annotated[bool, typer.Option("--calibrate", help="Reliability curve + Brier score across the corpus.")] = False,
 ) -> None:
     """B3 - win-probability curve into telemetry.json."""
-    _todo("momentum")
+    from .pipeline import momentum as mod
+
+    if calibrate:
+        result = mod.calibrate()
+        typer.echo(f"  Brier {result['brier']:.3f} over {result['n_samples']} samples -> {result['plot']}")
+        return
+    if not fight_id:
+        typer.secho("momentum needs --fight-id (or --calibrate).", fg=typer.colors.RED, err=True)
+        raise typer.Exit(code=2)
+    typer.echo(f"  momentum  -> {mod.compute(fight_id)}")
 
 
 @app.command()
@@ -205,7 +220,11 @@ def attention(fight_id: FightId) -> None:
 @app.command()
 def fuse(fight_id: FightId = "") -> None:
     """B5 - align attention to events; write media_value.json."""
-    _todo("fuse")
+    from .pipeline import fuse as mod
+
+    if fight_id:
+        typer.echo(f"  fuse      -> {mod.fuse(fight_id)}")
+    typer.echo(f"  media     -> {mod.media_value()}")
 
 
 @app.command()
