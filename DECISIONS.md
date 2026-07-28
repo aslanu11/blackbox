@@ -183,6 +183,39 @@ in the 5.x line and there's a reason to want it (smaller wheel, etc).
 
 ---
 
+## 2026-07-28 — dropped the `[opencv]` extra from the `scenedetect` dependency
+
+**What:** `scenedetect[opencv]` declares its own dependency on plain
+`opencv-python`, which reinstalls it alongside `opencv-contrib-python` —
+both packages ship a `cv2/` directory under the same import name, so
+whichever installs last wins the file conflict. A routine
+`pip install -e ".[dev]"` after this repo already had `opencv-contrib-python`
+silently clobbered it back to plain `opencv-python` 5.x (no `TrackerCSRT`,
+see the entry above) with no warning. Dropped to plain `scenedetect>=0.6.4`.
+
+**It is not actually fixed, just less likely:** `scenedetect` 0.7.1's own
+`install_requires` pulls in plain `opencv-python` regardless of the `[opencv]`
+extra (`pip show scenedetect` lists it under `Requires` unconditionally).
+So both packages always end up installed side by side either way; the extra
+only controlled a second, redundant declaration. Which one's files "win" on
+disk depends on pip's install order, which isn't a documented guarantee —
+it has come out in `opencv-contrib-python`'s favour twice in a row here
+(alphabetically after `opencv-python`, if that's why), but that's an
+observation, not a contract.
+
+**If `bb doctor`'s opencv line looks right but `bb track` complains "no
+cv2.TrackerCSRT constructor found":** don't `pip uninstall opencv-python`
+alone — its RECORD file lists paths that `opencv-contrib-python` has since
+overwritten, so uninstalling it deletes contrib's files too and breaks `cv2`
+entirely. Instead: `pip uninstall -y opencv-python opencv-contrib-python`
+(both), then `pip install -e ".[dev]"` fresh.
+
+**Revisit if:** this bites a third time — worth vendoring a `pip check`-style
+guard into `bb doctor` at that point (checks `hasattr(cv2, 'TrackerCSRT_create')`
+explicitly) rather than trusting install order.
+
+---
+
 ## TEMPLATE — copy this
 
 ## YYYY-MM-DD — <one-line decision>

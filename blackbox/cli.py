@@ -25,13 +25,7 @@ FightId = Annotated[str, typer.Option("--fight-id", "-f", help="Fight id from da
 #: STILL-UNIMPLEMENTED subcommand -> (phase, owner). Mirrors TEAM.md.
 #: Remove a command from this dict when you implement it - test_cli asserts
 #: that everything listed here exits 2 with the owner's name.
-OWNERS: dict[str, tuple[str, str]] = {
-    "ingest": ("D1", "Pranav"),
-    "shots": ("D2", "Pranav"),
-    "calibrate": ("D3", "Pranav"),
-    "track": ("D4", "Pranav"),
-    "overlay": ("D5", "Pranav"),
-}
+OWNERS: dict[str, tuple[str, str]] = {}
 
 
 def _todo(cmd: str) -> None:
