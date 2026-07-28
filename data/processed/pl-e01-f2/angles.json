@@ -1,0 +1,193 @@
+{
+  "fight_id": "pl-e01-f2",
+  "original_wide": [
+    true,
+    false,
+    true,
+    true,
+    true,
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    true,
+    true,
+    true,
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    true,
+    true,
+    false,
+    true,
+    false,
+    false,
+    true,
+    false,
+    false,
+    true,
+    false,
+    false
+  ],
+  "kept_angles": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "angles": [
+    {
+      "angle_id": 0,
+      "shots": [
+        0,
+        4
+      ],
+      "time_s": 3.9,
+      "kept": true,
+      "elevated": true,
+      "yellow_band_frac": 0.399,
+      "example_frame": "C:\\Users\\Aslan\\Downloads\\blackbox\\data\\frames\\pl-e01-f2\\key\\frame_000000.jpg"
+    },
+    {
+      "angle_id": 1,
+      "shots": [
+        11
+      ],
+      "time_s": 2.27,
+      "kept": true,
+      "elevated": true,
+      "yellow_band_frac": 0.287,
+      "example_frame": "C:\\Users\\Aslan\\Downloads\\blackbox\\data\\frames\\pl-e01-f2\\key\\frame_000021.jpg"
+    },
+    {
+      "angle_id": 2,
+      "shots": [
+        6
+      ],
+      "time_s": 1.27,
+      "kept": true,
+      "elevated": true,
+      "yellow_band_frac": 0.467,
+      "example_frame": "C:\\Users\\Aslan\\Downloads\\blackbox\\data\\frames\\pl-e01-f2\\key\\frame_000012.jpg"
+    },
+    {
+      "angle_id": 3,
+      "shots": [
+        33
+      ],
+      "time_s": 1.05,
+      "kept": true,
+      "elevated": true,
+      "yellow_band_frac": 0.392,
+      "example_frame": "C:\\Users\\Aslan\\Downloads\\blackbox\\data\\frames\\pl-e01-f2\\key\\frame_000077.jpg"
+    },
+    {
+      "angle_id": 4,
+      "shots": [
+        10,
+        15,
+        18,
+        20,
+        24,
+        27,
+        30
+      ],
+      "time_s": 17.43,
+      "kept": true,
+      "elevated": false,
+      "yellow_band_frac": 0.596,
+      "example_frame": "C:\\Users\\Aslan\\Downloads\\blackbox\\data\\frames\\pl-e01-f2\\key\\frame_000019.jpg"
+    },
+    {
+      "angle_id": 5,
+      "shots": [
+        12,
+        14,
+        19,
+        21
+      ],
+      "time_s": 11.43,
+      "kept": false,
+      "elevated": false,
+      "yellow_band_frac": 0.66,
+      "example_frame": "C:\\Users\\Aslan\\Downloads\\blackbox\\data\\frames\\pl-e01-f2\\key\\frame_000023.jpg"
+    },
+    {
+      "angle_id": 6,
+      "shots": [
+        3
+      ],
+      "time_s": 4.63,
+      "kept": false,
+      "elevated": false,
+      "yellow_band_frac": 0.596,
+      "example_frame": "C:\\Users\\Aslan\\Downloads\\blackbox\\data\\frames\\pl-e01-f2\\key\\frame_000005.jpg"
+    },
+    {
+      "angle_id": 7,
+      "shots": [
+        25
+      ],
+      "time_s": 4.4,
+      "kept": false,
+      "elevated": false,
+      "yellow_band_frac": 0.585,
+      "example_frame": "C:\\Users\\Aslan\\Downloads\\blackbox\\data\\frames\\pl-e01-f2\\key\\frame_000057.jpg"
+    },
+    {
+      "angle_id": 8,
+      "shots": [
+        9,
+        22
+      ],
+      "time_s": 3.43,
+      "kept": false,
+      "elevated": false,
+      "yellow_band_frac": 0.645,
+      "example_frame": "C:\\Users\\Aslan\\Downloads\\blackbox\\data\\frames\\pl-e01-f2\\key\\frame_000018.jpg"
+    },
+    {
+      "angle_id": 9,
+      "shots": [
+        16
+      ],
+      "time_s": 2.8,
+      "kept": false,
+      "elevated": false,
+      "yellow_band_frac": 0.624,
+      "example_frame": "C:\\Users\\Aslan\\Downloads\\blackbox\\data\\frames\\pl-e01-f2\\key\\frame_000032.jpg"
+    },
+    {
+      "angle_id": 10,
+      "shots": [
+        8
+      ],
+      "time_s": 2.67,
+      "kept": false,
+      "elevated": false,
+      "yellow_band_frac": 0.578,
+      "example_frame": "C:\\Users\\Aslan\\Downloads\\blackbox\\data\\frames\\pl-e01-f2\\key\\frame_000016.jpg"
+    },
+    {
+      "angle_id": 11,
+      "shots": [
+        7
+      ],
+      "time_s": 2.07,
+      "kept": false,
+      "elevated": false,
+      "yellow_band_frac": 0.52,
+      "example_frame": "C:\\Users\\Aslan\\Downloads\\blackbox\\data\\frames\\pl-e01-f2\\key\\frame_000013.jpg"
+    }
+  ]
+}

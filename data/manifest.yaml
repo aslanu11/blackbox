@@ -15,7 +15,11 @@ fights:
   # --- Episode 1 (yt rPvv0PN2wKs, 21:38, HAS most-replayed heatmap + chapters) ---
   # Hero: HUGE is the easiest CV target in the sport, and this episode is the
   # only one with attention data so far -> full three-lane demo lives here.
-  - {fight_id: pl-e01-f2, episode: 1, bots: [HyperShock, HUGE],       role: hero,      yt_id: rPvv0PN2wKs, fight_start_s: 630, fight_end_s: 837, winner: 'HUGE'}
+  # Chapter runs 630-837 but the broadcast's own graphic says KNOCKOUT: 74sec
+  # (clip t=74; clock cross-checks: 01:46 remaining at t=74). 77s-170s of the
+  # chapter is post-fight interviews - excluding them lifts wide coverage from
+  # 29% to ~76% of actual combat. End buffered to +8s for the KO attention bump.
+  - {fight_id: pl-e01-f2, episode: 1, bots: [HyperShock, HUGE],       role: hero,      yt_id: rPvv0PN2wKs, fight_start_s: 630, fight_end_s: 712, winner: 'HUGE', method: ko, time_s: 74}
   - {fight_id: pl-e01-f1, episode: 1, bots: [DeathRoll, Golden Fury], role: proleague, yt_id: rPvv0PN2wKs, fight_start_s: 120, fight_end_s: 415, winner: 'Golden Fury'}
   - {fight_id: pl-e01-f3, episode: 1, bots: [End Game, Malice],       role: proleague, yt_id: rPvv0PN2wKs, fight_start_s: 984, fight_end_s: 1248, winner: 'Malice'}
 

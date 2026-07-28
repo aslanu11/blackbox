@@ -243,3 +243,51 @@ directly in D5 instead and drop the transcode.
 **Why:**
 
 **Revisit if:**
+
+---
+
+## 2026-07-28 — Fight windows come from the broadcast, not the chapter markers
+
+**What:** pl-e01-f2's chapter runs 630-837s but the fight ends at clip t=74 —
+the broadcast's own "KNOCKOUT: 74sec" graphic and the arena clock (01:46
+remaining at t=74) both say so. 77s-170s of the chapter is interviews and
+celebrations. Window corrected to 630-712 (+8s buffer for the KO attention
+bump); `method: ko, time_s: 74` now in the manifest.
+
+**Why it looked like a CV crisis:** with interviews included, wide coverage
+read 29% and a "93-second dead zone" — the cameras weren't hostile, the fight
+was just over. Within actual combat, wide coverage is ~76%.
+
+**Revisit if:** other chapters bundle build-up before the opening bell too —
+check the arena clock in the first seconds of each clip.
+
+---
+
+## 2026-07-28 — Multi-angle tracking: per-angle homographies, honesty first
+
+**What:** Broadcast fights cut between many cameras (ep1: 12 clusters, ep4:
+16). A homography is valid for exactly one camera, so `angles.py` (D4.5)
+clusters wide shots by a background signature (48x27 blurred gray thumbnails,
+AVERAGED over ~5 frames per shot so the moving robots wash out — a single
+frame's signature is robot-dominated and useless). Clusters are ranked
+elevation-first (the arena's yellow wall padding sits high in frame on an
+elevated camera; centroid < 0.48 of frame height), screen time second, because
+a floor-level cam can out-time the elevated wide while its grazing-angle
+homography is garbage. Top N (default 3) survive; each gets its own
+`bb calibrate --angle N` -> `calibration_a<N>.json`; `track.py` picks the
+right H per shot, splits tracker runs at every camera cut, and leaves any
+uncalibrated angle as an explicit gap. Legacy single-camera path (the
+fixture) is untouched: no angles.json means calibration.json applies
+everywhere.
+
+**The rule that matters:** a frame seen by an uncalibrated camera never gets
+a position. Wrong-but-plausible coordinates are the one failure mode this
+product cannot survive on stage.
+
+**Measured:** ep4 hero keeps 70s of 94s wide across 4 angles; ep1 keeps 26s
+of 57s across 5 (its production leans on floor cams, but it has the episode's
+only most-replayed heatmap — so ep1 showcases the attention lane, ep4 the CV
+lane).
+
+**Revisit if:** the click budget (4 corners x N angles x 2 fights) is too
+much at the venue — drop to --keep-top 1 and accept elevated-only coverage.

@@ -11,13 +11,13 @@
   },
   "result": {
     "winner": "HUGE",
-    "method": null,
-    "time_s": null
+    "method": "ko",
+    "time_s": 74.0
   },
   "video": {
     "yt_id": "rPvv0PN2wKs",
     "fight_start_s": 630.0,
-    "fight_end_s": 837.0
+    "fight_end_s": 712.0
   },
   "role": "hero"
 }

@@ -238,12 +238,57 @@ def _wide_runs(wide_mask: list[bool]) -> list[tuple[int, int]]:
     return runs
 
 
+def _shot_of_frame(shots: SH.Shots, t: float) -> int | None:
+    for idx, sh in enumerate(shots.shots):
+        if sh.start_t <= t < sh.end_t:
+            return idx
+    return None
+
+
+def _shot_angles(fight_id: str) -> dict[int, int]:
+    """shot index -> camera-angle cluster id, from angles.json (D4.5).
+    Empty when angles.py hasn't run - single-camera footage (e.g. the fixture)."""
+    import json
+
+    p = S.fight_dir(fight_id) / "angles.json"
+    if not p.exists():
+        return {}
+    data = json.loads(p.read_text(encoding="utf-8"))
+    return {i: a["angle_id"] for a in data.get("angles", []) for i in a["shots"]}
+
+
+def _split_runs_at_shot_bounds(
+    runs: list[tuple[int, int]], shots: SH.Shots, fps: int
+) -> list[tuple[int, int]]:
+    """A CSRT tracker must never coast across a camera cut - the view jumps.
+    Split each wide run wherever the underlying shot changes."""
+    out: list[tuple[int, int]] = []
+    for start, end in runs:
+        seg_start = start
+        cur = _shot_of_frame(shots, round(start / fps, 2))
+        for i in range(start + 1, end):
+            sh = _shot_of_frame(shots, round(i / fps, 2))
+            if sh != cur:
+                out.append((seg_start, i))
+                seg_start, cur = i, sh
+        out.append((seg_start, end))
+    return out
+
+
 def _run(fight_id: str, review: bool = False, click_fn: ClickFn = _click_boxes) -> Path:
     meta = S.load_meta(fight_id)
     bot_names = list(meta.bots)
     shots = SH.load_shots(fight_id)
-    cal = C.load_calibration(fight_id)
-    H = np.array(cal.homography)
+
+    # One homography per calibrated camera angle. Single-camera footage (no
+    # angles.json) uses the legacy calibration.json for every wide segment.
+    calibrations = C.load_all_calibrations(fight_id)
+    if not calibrations:
+        raise FileNotFoundError(
+            f"no calibration for {fight_id!r} — run `bb calibrate --fight-id {fight_id}` first."
+        )
+    H_by_angle = {angle: np.array(cal.homography) for angle, cal in calibrations.items()}
+    angle_of_shot = _shot_angles(fight_id)
 
     track_dir = S.FRAMES_DIR / fight_id / "track"
     frame_paths = sorted(track_dir.glob("*.jpg"))
@@ -254,12 +299,25 @@ def _run(fight_id: str, review: bool = False, click_fn: ClickFn = _click_boxes) 
     frames: list[S.TrackFrame | None] = [None] * len(frame_paths)
 
     appearance: dict[str, np.ndarray] = {}
-    for start, end in _wide_runs(wide_mask):
+    skipped_s = 0.0
+    for start, end in _split_runs_at_shot_bounds(_wide_runs(wide_mask), shots, FPS):
+        shot_idx = _shot_of_frame(shots, round(start / FPS, 2))
+        angle = angle_of_shot.get(shot_idx) if shot_idx is not None else None
+        H = H_by_angle.get(angle, H_by_angle.get(0) if not angle_of_shot else None)
+        if H is None:
+            # This camera angle has no calibration: honest gap, never a guess.
+            skipped_s += (end - start) / FPS
+            continue
         seg_frames, appearance = _track_segment(
             frame_paths[start:end], start, bot_names, H, appearance, click_fn
         )
         for offset, tf in enumerate(seg_frames):
             frames[start + offset] = tf
+    if skipped_s:
+        print(
+            f"skipped {skipped_s:.1f}s of wide footage from uncalibrated angles — "
+            f"run `bb calibrate --angle N` to add coverage (see angles.json)"
+        )
 
     for i in range(len(frames)):
         if frames[i] is None:

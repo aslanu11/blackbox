@@ -158,14 +158,31 @@ def shots(
 
 
 @app.command()
+def angles(
+    fight_id: FightId,
+    keep_angle: Annotated[int, typer.Option("--keep-angle", help="Which single camera-angle cluster keeps its wide shots (when --keep-top is 1).")] = 0,
+    keep_top: Annotated[int, typer.Option("--keep-top", help="Keep the N best camera angles; calibrate each with `bb calibrate --angle N`.")] = 3,
+) -> None:
+    """D4.5 - cluster wide shots by camera angle; demote the rest to gaps.
+
+    A homography is only valid for ONE camera. Run this after `bb shots`,
+    then calibrate each kept angle, so track.py never projects a shot
+    through the wrong camera's homography."""
+    from .pipeline import angles as _angles
+
+    _angles.cluster(fight_id, keep_angle=keep_angle, keep_top=keep_top)
+
+
+@app.command()
 def calibrate(
     fight_id: FightId,
     check: Annotated[bool, typer.Option("--check", help="Overlay the projected floor grid instead.")] = False,
+    angle: Annotated[int, typer.Option("--angle", help="Camera-angle cluster to calibrate (from `bb angles`). -1 = legacy single-camera mode.")] = -1,
 ) -> None:
-    """D3 - click 4+ known floor points -> homography -> calibration.json."""
+    """D3 - click 4+ known floor points -> homography -> calibration file(s)."""
     from .pipeline import calibrate as _calibrate
 
-    _calibrate.calibrate(fight_id, check=check)
+    _calibrate.calibrate(fight_id, check=check, angle=(None if angle < 0 else angle))
 
 
 @app.command()
@@ -276,10 +293,16 @@ def run(fight_id: FightId) -> None:
     """
     from typer.testing import CliRunner  # reuse each command's own wiring
 
-    steps = ["ingest", "shots", "calibrate", "track", "telemetry", "events",
+    steps = ["ingest", "shots", "angles", "calibrate", "track", "telemetry", "events",
              "momentum", "scorecard", "fuse", "overlay", "export"]
     runner = CliRunner()
     for step in steps:
+        if step == "calibrate":
+            from .pipeline import calibrate as _cal
+
+            if _cal.load_all_calibrations(fight_id):
+                typer.secho("== bb calibrate (skipped - calibration on disk)", fg=typer.colors.CYAN)
+                continue
         typer.secho(f"== bb {step}", fg=typer.colors.CYAN)
         result = runner.invoke(app, [step, "--fight-id", fight_id], catch_exceptions=False)
         typer.echo(result.output.rstrip())

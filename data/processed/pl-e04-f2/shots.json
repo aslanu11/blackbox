@@ -1,0 +1,230 @@
+{
+  "fight_id": "pl-e04-f2",
+  "shots": [
+    {
+      "start_t": 0.0,
+      "end_t": 0.35,
+      "wide": false
+    },
+    {
+      "start_t": 0.35,
+      "end_t": 4.383,
+      "wide": true
+    },
+    {
+      "start_t": 4.383,
+      "end_t": 6.35,
+      "wide": false
+    },
+    {
+      "start_t": 6.35,
+      "end_t": 8.35,
+      "wide": false
+    },
+    {
+      "start_t": 8.35,
+      "end_t": 12.05,
+      "wide": true
+    },
+    {
+      "start_t": 12.05,
+      "end_t": 15.417,
+      "wide": true
+    },
+    {
+      "start_t": 15.417,
+      "end_t": 21.917,
+      "wide": true
+    },
+    {
+      "start_t": 21.917,
+      "end_t": 27.25,
+      "wide": true
+    },
+    {
+      "start_t": 27.25,
+      "end_t": 28.4,
+      "wide": false
+    },
+    {
+      "start_t": 28.4,
+      "end_t": 29.233,
+      "wide": false
+    },
+    {
+      "start_t": 29.233,
+      "end_t": 33.35,
+      "wide": true
+    },
+    {
+      "start_t": 33.35,
+      "end_t": 35.217,
+      "wide": false
+    },
+    {
+      "start_t": 35.217,
+      "end_t": 38.433,
+      "wide": true
+    },
+    {
+      "start_t": 38.433,
+      "end_t": 40.95,
+      "wide": false
+    },
+    {
+      "start_t": 40.95,
+      "end_t": 43.617,
+      "wide": false
+    },
+    {
+      "start_t": 43.617,
+      "end_t": 46.45,
+      "wide": false
+    },
+    {
+      "start_t": 46.45,
+      "end_t": 48.567,
+      "wide": true
+    },
+    {
+      "start_t": 48.567,
+      "end_t": 55.583,
+      "wide": true
+    },
+    {
+      "start_t": 55.583,
+      "end_t": 59.35,
+      "wide": false
+    },
+    {
+      "start_t": 59.35,
+      "end_t": 61.817,
+      "wide": false
+    },
+    {
+      "start_t": 61.817,
+      "end_t": 66.833,
+      "wide": false
+    },
+    {
+      "start_t": 66.833,
+      "end_t": 69.283,
+      "wide": false
+    },
+    {
+      "start_t": 69.283,
+      "end_t": 70.167,
+      "wide": false
+    },
+    {
+      "start_t": 70.167,
+      "end_t": 73.217,
+      "wide": true
+    },
+    {
+      "start_t": 73.217,
+      "end_t": 74.383,
+      "wide": false
+    },
+    {
+      "start_t": 74.383,
+      "end_t": 75.65,
+      "wide": true
+    },
+    {
+      "start_t": 75.65,
+      "end_t": 78.15,
+      "wide": true
+    },
+    {
+      "start_t": 78.15,
+      "end_t": 81.9,
+      "wide": true
+    },
+    {
+      "start_t": 81.9,
+      "end_t": 85.517,
+      "wide": true
+    },
+    {
+      "start_t": 85.517,
+      "end_t": 88.383,
+      "wide": true
+    },
+    {
+      "start_t": 88.383,
+      "end_t": 89.55,
+      "wide": false
+    },
+    {
+      "start_t": 89.55,
+      "end_t": 90.717,
+      "wide": false
+    },
+    {
+      "start_t": 90.717,
+      "end_t": 96.85,
+      "wide": true
+    },
+    {
+      "start_t": 96.85,
+      "end_t": 99.25,
+      "wide": true
+    },
+    {
+      "start_t": 99.25,
+      "end_t": 101.483,
+      "wide": false
+    },
+    {
+      "start_t": 101.483,
+      "end_t": 106.017,
+      "wide": true
+    },
+    {
+      "start_t": 106.017,
+      "end_t": 107.883,
+      "wide": false
+    },
+    {
+      "start_t": 107.883,
+      "end_t": 110.35,
+      "wide": false
+    },
+    {
+      "start_t": 110.35,
+      "end_t": 112.65,
+      "wide": false
+    },
+    {
+      "start_t": 112.65,
+      "end_t": 116.483,
+      "wide": false
+    },
+    {
+      "start_t": 116.483,
+      "end_t": 117.933,
+      "wide": false
+    },
+    {
+      "start_t": 117.933,
+      "end_t": 121.433,
+      "wide": false
+    },
+    {
+      "start_t": 121.433,
+      "end_t": 122.55,
+      "wide": false
+    },
+    {
+      "start_t": 122.55,
+      "end_t": 123.75,
+      "wide": false
+    },
+    {
+      "start_t": 123.75,
+      "end_t": 124.0,
+      "wide": false
+    }
+  ]
+}

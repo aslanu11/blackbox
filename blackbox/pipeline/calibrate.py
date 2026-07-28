@@ -112,26 +112,74 @@ def invert_homography(H: np.ndarray) -> np.ndarray:
 # --------------------------------------------------------------------------
 
 
-def calibration_path(fight_id: str) -> Path:
-    return S.fight_dir(fight_id) / "calibration.json"
+def calibration_path(fight_id: str, angle: int | None = None) -> Path:
+    """``calibration.json`` (legacy single-camera) or ``calibration_a<N>.json``.
+
+    Broadcast fights cut between several cameras, each needing its own
+    homography (see angles.py). Angle 0 is additionally mirrored to the legacy
+    path so single-camera consumers keep working unchanged.
+    """
+    name = "calibration.json" if angle is None else f"calibration_a{angle}.json"
+    return S.fight_dir(fight_id) / name
 
 
-def save_calibration(cal: Calibration) -> Path:
-    path = calibration_path(cal.fight_id)
+def save_calibration(cal: Calibration, angle: int | None = None) -> Path:
+    path = calibration_path(cal.fight_id, angle)
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(cal.model_dump(mode="json"), indent=2) + "\n", encoding="utf-8")
+    payload = json.dumps(cal.model_dump(mode="json"), indent=2) + "\n"
+    path.write_text(payload, encoding="utf-8")
+    if angle == 0:  # keep the legacy path in lockstep with the primary camera
+        calibration_path(cal.fight_id).write_text(payload, encoding="utf-8")
     return path
 
 
-def load_calibration(fight_id: str) -> Calibration:
-    path = calibration_path(fight_id)
+def load_calibration(fight_id: str, angle: int | None = None) -> Calibration:
+    path = calibration_path(fight_id, angle)
     if not path.exists():
         raise FileNotFoundError(f"{path} not found — run `bb calibrate --fight-id {fight_id}` first.")
     return Calibration.model_validate_json(path.read_text(encoding="utf-8"))
 
 
-def _pick_calibration_frame(fight_id: str) -> tuple[np.ndarray, str]:
-    """The first extracted keyframe — a representative wide shot to click on."""
+def load_all_calibrations(fight_id: str) -> dict[int, Calibration]:
+    """Every per-angle calibration on disk. The legacy calibration.json counts
+    as angle 0 when no explicit calibration_a0.json exists."""
+    out: dict[int, Calibration] = {}
+    for p in S.fight_dir(fight_id).glob("calibration_a*.json"):
+        try:
+            n = int(p.stem.rsplit("a", 1)[1])
+        except ValueError:
+            continue
+        out[n] = Calibration.model_validate_json(p.read_text(encoding="utf-8"))
+    if 0 not in out and calibration_path(fight_id).exists():
+        out[0] = load_calibration(fight_id)
+    return out
+
+
+def _angle_example_frame(fight_id: str, angle: int) -> Path | None:
+    """The representative frame angles.py recorded for this camera angle."""
+    angles_file = S.fight_dir(fight_id) / "angles.json"
+    if not angles_file.exists():
+        return None
+    data = json.loads(angles_file.read_text(encoding="utf-8"))
+    for a in data.get("angles", []):
+        if a.get("angle_id") == angle and a.get("example_frame"):
+            p = Path(a["example_frame"])
+            return p if p.exists() else None
+    return None
+
+
+def _pick_calibration_frame(fight_id: str, angle: int | None = None) -> tuple[np.ndarray, str]:
+    """A representative wide frame to click on.
+
+    With an angle given, use that camera cluster's example frame from
+    angles.json; otherwise fall back to the first extracted keyframe."""
+    if angle is not None:
+        p = _angle_example_frame(fight_id, angle)
+        if p is not None:
+            frame = cv2.imread(str(p))
+            if frame is not None:
+                return frame, p.name
+        print(f"no angles.json example for angle {angle} — falling back to the first keyframe")
     key_dir = S.FRAMES_DIR / fight_id / "key"
     candidates = sorted(key_dir.glob("*.jpg")) if key_dir.exists() else []
     if not candidates:
@@ -205,14 +253,15 @@ def _click_floor_points(
 # --------------------------------------------------------------------------
 
 
-def calibrate(fight_id: str, check: bool = False) -> Path:
+def calibrate(fight_id: str, check: bool = False, angle: int | None = None) -> Path:
     if check:
-        return _render_check(fight_id)
+        return _render_check(fight_id, angle=angle)
 
-    frame, frame_name = _pick_calibration_frame(fight_id)
+    frame, frame_name = _pick_calibration_frame(fight_id, angle=angle)
     labels = [lbl for lbl, _ in CALIBRATION_POINTS]
     floor_pts = [pt for _, pt in CALIBRATION_POINTS]
-    print(f"Click {len(labels)} floor points on {frame_name} in this order: {', '.join(labels)}")
+    which = f" (camera angle {angle})" if angle is not None else ""
+    print(f"Click {len(labels)} floor points on {frame_name}{which} in this order: {', '.join(labels)}")
 
     image_pts = _click_floor_points(frame, CALIBRATION_POINTS)
     H, err = compute_homography(image_pts, floor_pts)
@@ -225,16 +274,16 @@ def calibrate(fight_id: str, check: bool = False) -> Path:
         reprojection_error_m=err,
         source_frame=frame_name,
     )
-    path = save_calibration(cal)
+    path = save_calibration(cal, angle=angle)
     print(f"reprojection error: {err:.3f} m ({100 * err / S.FLOOR_M:.2f}% of floor edge)")
-    print(f"calibration.json -> {path}")
+    print(f"{path.name} -> {path}")
     return path
 
 
-def _render_check(fight_id: str) -> Path:
+def _render_check(fight_id: str, angle: int | None = None) -> Path:
     """Overlay the projected floor grid (1 m spacing) for eyeball validation."""
-    cal = load_calibration(fight_id)
-    frame, _ = _pick_calibration_frame(fight_id)
+    cal = load_calibration(fight_id, angle=angle)
+    frame, _ = _pick_calibration_frame(fight_id, angle=angle)
     H_inv = invert_homography(np.array(cal.homography))
 
     img = frame.copy()
