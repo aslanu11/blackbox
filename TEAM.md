@@ -161,3 +161,115 @@ magnitudes, a mobility decay at t=100, a KO at t=141.5, and three coverage
 gaps totalling 20% of frames. Your acceptance test asserts against that file.
 
 Real footage arrives mid-afternoon and slots into code that already works.
+
+---
+
+## Handover — Pranav's session → Aslan (2026-07-28, ~18:00)
+
+Pranav's Claude Code session is stepping back here; this section is
+everything it did and found, so a fresh session (or Aslan) can pick up
+without re-deriving it.
+
+### Phase D status: done, tested, on `main`
+
+D1–D6 are all implemented and merged (rebased cleanly onto Aslan's
+A5/B1–B5/C1–C4/E1–E4/F1 push earlier today). 74/74 tests pass, including a
+fixture-replay test for D4 that renders synthetic tracked blobs and confirms
+CSRT + histogram re-acquisition recovers floor positions to well under the
+0.5 m bar. `bb overlay --fight-id fixture-001` produces a real 90 s / 720p
+mp4 end to end, with a schematic-floor fallback so it works even with no
+real footage yet.
+
+Two environment landmines hit and fixed along the way (both logged in
+DECISIONS.md with full remediation steps — read those before reinstalling):
+1. A stray `.venv` built on Python 3.10 instead of the required ≥3.11 —
+   looked like a hung network install, was actually pip's resolver retrying
+   forever.
+2. OpenCV 5.x dropped `cv2.TrackerCSRT` entirely. Fixed via
+   `opencv-contrib-python<5`, plus a follow-up fix: `scenedetect`'s own
+   `install_requires` pulls in plain `opencv-python` unconditionally, which
+   silently clobbers `opencv-contrib-python`'s files on any fresh
+   `pip install -e ".[dev]"`. **If `bb track` ever complains "no
+   cv2.TrackerCSRT constructor found" again**, don't uninstall just
+   `opencv-python` (it deletes contrib's files too) — uninstall both and
+   reinstall fresh. Full detail in DECISIONS.md.
+
+**Still blocked on:** `data/manifest.yaml` still has 6 `TODO` fields
+(yt_id / fight offsets) and `data/raw/` is empty — real footage was never
+supplied today, so D1–D4 have only run against the synthetic fixture, never
+real video. That's the actual Gate 1 gap, not a code gap.
+
+### Bright Data — what's on the account, and where it fits
+
+Pranav's session tested the account's Bright Data access at the user's
+request (see chat, not reproduced here). **The API key was pasted into a
+chat session — it must never go in this file, in any committed file, or
+anywhere in the repo (public from commit one).** It belongs in `.env` only
+(gitignored, see `.env.example`) — whoever wires this in should get a fresh
+key from the Bright Data dashboard and rotate the old one out. Endpoint
+shape only, key omitted:
+
+```python
+# trigger:
+POST https://api.brightdata.com/dca/trigger
+  ?collector=c_ms4yfrun1dayux9o7y&queue_next=1
+  headers: Authorization: Bearer <token from .env>
+  body: [{"url": "https://battlebots.com/robots/"}]
+# -> {"collection_id": "...", "start_eta": "..."}
+
+# poll/fetch:
+GET https://api.brightdata.com/dca/dataset?id=<collection_id>
+  -> 202 {"status":"collecting", ...} while running
+  -> 200 [ {...one object per robot...} ]  when done (took ~4 min this run)
+```
+
+**Account has one other provisioned zone:** `scraping_browser1`
+(`type: browser_api`) — Bright Data's Scraping Browser, a remote headless
+browser with unlocking/proxy rotation/CAPTCHA handling built in, reachable
+over a CDP/Playwright-style endpoint. Separate product from the collector
+above; general-purpose, not battlebots-specific.
+
+**Live-site note:** hitting `battlebots.com/robots/` directly in a plain
+browser returned "Database Error" (WordPress DB failure) twice in a row
+during this session. The Bright Data collector still returned clean data on
+the same URL — real evidence for routing C-phase fetches through it rather
+than plain `httpx`, which is exactly what `net.py`'s job description already
+says (`Bright Data / plain fetch + fetch_log.jsonl`).
+
+**Collector output** — one object per robot, 7 robots returned for the
+current roster page:
+
+```json
+{
+  "robot_name": "Malice",
+  "robot_type": "Horizontal Drum Spinner",
+  "team_name": "Team Malice",
+  "builder_name": "Adrian \"Bunny\" Liaw",
+  "hometown": "San Jose, California",
+  "image_urls": ["https://battlebots.com/wp-content/uploads/2022/11/BB2022-Malice-team.jpg", "...bot.jpg", "...captain.jpg", "...(8 more, mostly unrelated roster thumbnails on the page)"],
+  "career_stats": {"total_matches": 21, "win_percentage": "52%", "total_wins": 11, "losses": 10},
+  "match_history": [],
+  "website_urls": ["https://teammalice.com/", "https://www.facebook.com/malicebattlebot", "..."],
+  "product_page_url": "https://battlebots.com/robot/malice-wcvii/"
+}
+```
+
+Other robots seen: Double Tap, Captain Shrederator, Cobalt, Tantrum,
+Slammo!, SawBlaze — same shape, `career_stats` varies (2–35 matches,
+20–100% win rate). `match_history` was empty for all 7 on the roster index
+page; it may only populate on each robot's own `product_page_url` — worth
+a follow-up collector run per-bot if that field matters.
+
+**Where each field fits:**
+
+| Field | Feeds | Note |
+|---|---|---|
+| `robot_name`, `robot_type` | C4 `sources/specs.py` → `data/bots.csv` | `robot_type` is free text ("Bar spinner (horizontal)", "Hammer Saw", "Puncher", "Grappler") — needs a small mapping into `schemas.WEAPON_CLASSES`. Most map cleanly; "Puncher" has no obvious bucket, falls to `"other"`. |
+| `career_stats` (wins/losses/win%) | B4 `scorecard.py` → `BotMediaValue.record` / `perf_score` | Both fields already exist in `schemas.py` with no real source wired in yet — this is one, zero manual entry needed. |
+| `image_urls` (first 2–3 per bot) | E-phase frontend | Real bot/team photos instead of placeholders. |
+| `product_page_url` | Deeper C4 crawl | Likely has full spec sheet + populated `match_history` per bot — could automate what `data/manifest.yaml`'s corpus section currently marks `# Human fills`. |
+| Scraping Browser zone | C1 `net.py`, C3 `sources/wiki.py`, C2 `sources/yt.py` | For JS-heavy / anti-bot pages — Fandom fight tables and YouTube's most-replayed heatmap JSON are exactly this kind of target. |
+
+None of `net.py`, `sources/specs.py`, `sources/wiki.py`, `sources/yt.py`
+were touched by Pranav's session (out of scope per the split above) — this
+is research only, handed off for whoever picks up C1/C4 next.
