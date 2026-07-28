@@ -5,10 +5,12 @@
 import { useEffect, useRef, useState } from "react";
 import TimelineLanes from "./components/TimelineLanes";
 import VideoHero from "./components/VideoHero";
+import Guide from "./components/Guide";
 import HeatmapPanel from "./components/HeatmapPanel";
 import ScorecardCard from "./components/ScorecardCard";
 import RobberyTable from "./components/RobberyTable";
 import MediaValueTable from "./components/MediaValueTable";
+import SponsorTable, { type SponsorIndex } from "./components/SponsorTable";
 import WinsVsWatches from "./components/WinsVsWatches";
 import {
   gapsFromTracks,
@@ -45,9 +47,20 @@ export default function App() {
   const [fightId, setFightId] = useState<string | null>(null);
   const [data, setData] = useState<FightData | null>(null);
   const [media, setMedia] = useState<MediaValue | null>(null);
+  const [sponsor, setSponsor] = useState<SponsorIndex | null>(null);
   const [scorecards, setScorecards] = useState<Record<string, Scorecard>>({});
   const [playhead, setPlayhead] = useState(-1);
+  // "recorder" | "guide" - toggled by the masthead link; the hash keeps the
+  // guide directly linkable (…/#guide) without a router.
+  const [view, setView] = useState<"recorder" | "guide">(
+    window.location.hash === "#guide" ? "guide" : "recorder",
+  );
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  const showGuide = (on: boolean) => {
+    setView(on ? "guide" : "recorder");
+    window.location.hash = on ? "#guide" : "";
+  };
 
   useEffect(() => {
     (async () => {
@@ -55,6 +68,7 @@ export default function App() {
       setIndex(idx);
       if (idx?.fights.length) setFightId(idx.fights[0].fight_id);
       setMedia(await fetchJson<MediaValue>("/data/media_value.json"));
+      setSponsor(await fetchJson<SponsorIndex>("/data/sponsor_index.json"));
       if (idx) {
         const cards: Record<string, Scorecard> = {};
         await Promise.all(
@@ -122,6 +136,9 @@ export default function App() {
           </span>
         </span>
         <span className="display tagline dim">FLIGHT RECORDER FOR ROBOT COMBAT</span>
+        <button className="guide-link display" onClick={() => showGuide(view !== "guide")}>
+          {view === "guide" ? "RECORDER" : "HOW TO READ"}
+        </button>
         <select value={fightId ?? ""} onChange={(e) => setFightId(e.target.value)} aria-label="Select fight">
           {index.fights.map((f) => (
             <option key={f.fight_id} value={f.fight_id}>
@@ -131,7 +148,9 @@ export default function App() {
         </select>
       </header>
 
-      {fight && (
+      {view === "guide" && <Guide onBack={() => showGuide(false)} />}
+
+      {view === "recorder" && fight && (
         <main className="stack">
           <VideoHero
             ref={videoRef}
@@ -171,6 +190,8 @@ export default function App() {
             <MediaValueTable media={media} />
             <WinsVsWatches media={media} colors={fight.colors} />
           </div>
+
+          <SponsorTable index={sponsor} />
 
           <p className="footer-note">
             {coverage !== null ? `COVERAGE ${coverage}%` : "COVERAGE n/a"} · CH1 MOMENTUM · CH2

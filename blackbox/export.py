@@ -90,7 +90,7 @@ def export(fight_id: str | None = None) -> Path:
 
     # League-wide artifacts.
     WEB_DATA.mkdir(parents=True, exist_ok=True)
-    for name in ("media_value.json", "calibration.png"):
+    for name in ("media_value.json", "sponsor_index.json", "calibration.png"):
         src = S.PROCESSED_DIR / name
         if src.exists():
             shutil.copy2(src, WEB_DATA / name)

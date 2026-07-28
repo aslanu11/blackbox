@@ -37,6 +37,26 @@ drive an audience.
 
 ---
 
+## Reading the instruments
+
+The app ships its own manual: the **HOW TO READ** link in the masthead (or
+`/#guide`) explains every instrument — what it measures, how it's computed,
+and where it can be wrong. The short version:
+
+| Instrument | What it means |
+|---|---|
+| `CH1 MOMENTUM` | Live win probability from control + hit differential + mobility, each signal bounded; clamped to 5–95% outside a KO — the model never claims mid-fight certainty |
+| `CH2 EVENTS` | Detected impacts: hit markers sized by combined velocity change, hazards, KO. Actor = whoever was closing faster (an estimate, not a verdict) |
+| `CH3 ATTENTION` | YouTube's real "most replayed" curve in fight-local time; empty until YouTube publishes one — we never fake it |
+| Control heat | Where each robot spent the fight (click to enlarge). Centre = control; a bright corner smear = pinned or dead |
+| Scorecard | The 11-point rubric (Damage 5 / Aggression 3 / Control 3) computed from telemetry — an independent second opinion vs the judges |
+| Robbery score | Our margin of disagreement with an official judges' decision; 0 = we agree |
+| Media value | `screen_s × attn_index` — on-screen time weighted by how hard the audience rewatches it. Losing robots can out-earn winners; that's the rate-card argument |
+
+Full formulas and caveats live in the in-app guide and [DECISIONS.md](DECISIONS.md).
+
+---
+
 ## Honesty as a design constraint
 
 The CV lane cannot see through a close-up. When the broadcast cuts away from the

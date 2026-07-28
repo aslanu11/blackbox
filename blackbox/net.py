@@ -79,9 +79,16 @@ def _fetch_brightdata(url: str, render: bool) -> tuple[str, int]:
 
 
 def _fetch_plain(url: str) -> tuple[str, int]:
+    headers = {"User-Agent": USER_AGENT}
+    # EU/UK requests to YouTube get a GDPR interstitial ("Before you continue")
+    # instead of the page. SOCS=CAI declines non-essential cookies and skips
+    # the interstitial - the privacy-preserving choice, and the only way to
+    # reach the actual content non-interactively.
+    if "youtube.com" in url:
+        headers["Cookie"] = "SOCS=CAI"
     resp = httpx.get(
         url,
-        headers={"User-Agent": USER_AGENT},
+        headers=headers,
         follow_redirects=True,
         timeout=TIMEOUT_S,
     )
@@ -93,8 +100,10 @@ def fetch(url: str, render: bool = False, force: bool = False) -> str:
     """Fetch a URL through whichever path is available, with caching + logging."""
     cache = _cache_path(url)
     if cache.exists() and not force:
-        _log(url, "cache", 200, True)
-        return cache.read_text(encoding="utf-8")
+        text = cache.read_text(encoding="utf-8")
+        if text.strip():  # never serve a cached empty body - refetch instead
+            _log(url, "cache", 200, True)
+            return text
 
     if _token():
         try:
@@ -105,11 +114,17 @@ def fetch(url: str, render: bool = False, force: bool = False) -> str:
             # the pipeline on it.
             text, status = _fetch_plain(url)
             via = "plain-fallback"
+        if not text.strip():
+            # The Unlocker restricts some targets (YouTube/Google return an
+            # empty 200 body on standard zones). The plain path handles them.
+            text, status = _fetch_plain(url)
+            via = "plain-fallback-empty"
     else:
         text, status = _fetch_plain(url)
         via = "plain"
 
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    cache.write_text(text, encoding="utf-8")
+    if text.strip():  # cache only real content
+        CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        cache.write_text(text, encoding="utf-8")
     _log(url, via, status, False)
     return text

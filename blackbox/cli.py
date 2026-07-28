@@ -258,6 +258,19 @@ def attention(fight_id: FightId) -> None:
 
 
 @app.command()
+def sponsorship(
+    max_videos: Annotated[int, typer.Option("--max-videos", help="Cap on watch pages scraped.")] = 40,
+) -> None:
+    """C5 - scrape the BattleBots channel via Bright Data -> sponsorship.json.
+
+    League-wide attention: per-bot reach (views of every video naming the bot)
+    x re-watchability (most-replayed heat peaks)."""
+    from .sources import ytscrape
+
+    ytscrape.sponsorship(max_videos=max_videos)
+
+
+@app.command()
 def fuse(fight_id: FightId = "") -> None:
     """B5 - align attention to events; write media_value.json."""
     from .pipeline import fuse as mod

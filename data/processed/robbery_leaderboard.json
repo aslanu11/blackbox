@@ -7,6 +7,14 @@
       "official_winner": "Minotaur",
       "split": null,
       "robbery_score": 0.0
+    },
+    {
+      "fight_id": "pl-e04-f2",
+      "bots": "Bloodsport vs Minotaur",
+      "our_winner": "Bloodsport",
+      "official_winner": "Minotaur",
+      "split": null,
+      "robbery_score": 0.0
     }
   ]
 }
