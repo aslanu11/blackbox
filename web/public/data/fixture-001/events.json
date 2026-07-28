@@ -1,0 +1,47 @@
+{
+  "fight_id": "fixture-001",
+  "events": [
+    {
+      "t": 21.8,
+      "type": "hit",
+      "magnitude": 2.76,
+      "actor": "Minotaur",
+      "target": "Bloodsport"
+    },
+    {
+      "t": 48.3,
+      "type": "hit",
+      "magnitude": 3.1,
+      "actor": "Minotaur",
+      "target": "Bloodsport"
+    },
+    {
+      "t": 64.2,
+      "type": "hit",
+      "magnitude": 2.83,
+      "actor": "Bloodsport",
+      "target": "Minotaur"
+    },
+    {
+      "t": 88.2,
+      "type": "hit",
+      "magnitude": 3.04,
+      "actor": "Bloodsport",
+      "target": "Minotaur"
+    },
+    {
+      "t": 107.8,
+      "type": "hit",
+      "magnitude": 5.66,
+      "actor": "Minotaur",
+      "target": "Bloodsport"
+    },
+    {
+      "t": 141.5,
+      "type": "ko",
+      "magnitude": null,
+      "actor": "Minotaur",
+      "target": "Bloodsport"
+    }
+  ]
+}

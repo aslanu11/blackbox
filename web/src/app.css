@@ -1,0 +1,204 @@
+/* Layout only - all colour/type decisions live in tokens.css (§12, locked). */
+
+.shell {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 12px 24px;
+}
+
+.masthead {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 2px;
+  border-bottom: var(--hairline);
+}
+
+.masthead .wordmark {
+  font-size: 22px;
+  letter-spacing: 0.04em;
+}
+
+.masthead .tagline {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.masthead select {
+  margin-left: auto;
+  background: var(--panel);
+  color: var(--ink);
+  border: var(--hairline);
+  border-radius: var(--radius);
+  font-family: var(--font-data);
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.video-hero {
+  width: 100%;
+  background: #000;
+  border: var(--hairline);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.video-hero video {
+  display: block;
+  width: 100%;
+  max-height: 60vh;
+}
+
+.panel {
+  padding: 10px 12px;
+}
+
+.panel h2 {
+  font-size: 13px;
+  color: var(--ink-dim);
+  margin-bottom: 8px;
+}
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr;
+  gap: 10px;
+}
+
+.panel-grid-2 {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 900px) {
+  .panel-grid,
+  .panel-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.empty-state {
+  color: var(--ink-dim);
+  font-size: 13px;
+  padding: 16px 4px;
+}
+
+.empty-state code {
+  font-family: var(--font-data);
+  color: var(--ink);
+}
+
+/* Timeline lanes */
+.lanes {
+  padding: 8px 12px 4px;
+}
+
+.lanes svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: crosshair;
+}
+
+.lane-label {
+  font-family: var(--font-data);
+  font-size: 10px;
+  fill: var(--ink-dim);
+  letter-spacing: 0.08em;
+}
+
+/* Tables */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+.data-table th {
+  font-family: var(--font-data);
+  font-weight: 500;
+  font-size: 11px;
+  text-align: left;
+  color: var(--ink-dim);
+  border-bottom: var(--hairline);
+  padding: 4px 8px 4px 0;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: 4px 8px 4px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 40%, transparent);
+  font-variant-numeric: tabular-nums;
+}
+
+.data-table td.num {
+  font-family: var(--font-data);
+  text-align: right;
+}
+
+.data-table th.num {
+  text-align: right;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+/* Scorecard bars */
+.score-row {
+  display: grid;
+  grid-template-columns: 72px 1fr 40px;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+  font-size: 12px;
+}
+
+.score-row .bar {
+  display: flex;
+  height: 10px;
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.heatmaps {
+  display: flex;
+  gap: 8px;
+}
+
+.heatmaps figure {
+  flex: 1;
+  margin: 0;
+  text-align: center;
+}
+
+.heatmaps img {
+  width: 100%;
+  border: var(--hairline);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+
+.heatmaps figcaption {
+  font-family: var(--font-data);
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.footer-note {
+  color: var(--ink-dim);
+  font-size: 11px;
+  font-family: var(--font-data);
+  padding-top: 8px;
+}

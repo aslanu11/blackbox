@@ -34,7 +34,6 @@ OWNERS: dict[str, tuple[str, str]] = {
     "scorecard": ("B4", "Aslan"),
     "attention": ("C2", "Aslan"),
     "overlay": ("D5", "Pranav"),
-    "export": ("E4", "Aslan"),
 }
 
 
@@ -236,7 +235,9 @@ def overlay(fight_id: FightId) -> None:
 @app.command()
 def export(fight_id: FightId = "") -> None:
     """E4 - copy processed artifacts into web/public/data/ and write index.json."""
-    _todo("export")
+    from . import export as mod
+
+    typer.echo(f"  index     -> {mod.export(fight_id or None)}")
 
 
 @app.command()

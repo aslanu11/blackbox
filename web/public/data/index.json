@@ -1,0 +1,30 @@
+{
+  "fights": [
+    {
+      "fight_id": "fixture-001",
+      "bots": [
+        "Minotaur",
+        "Bloodsport"
+      ],
+      "colors": {
+        "Minotaur": "#D4AF37",
+        "Bloodsport": "#1E6FD9"
+      },
+      "role": "hero",
+      "result": {
+        "winner": "Minotaur",
+        "method": "ko",
+        "time_s": 141.5
+      },
+      "has": {
+        "meta": true,
+        "tracks": true,
+        "events": true,
+        "telemetry": true,
+        "attention": true,
+        "scorecard": false,
+        "overlay": false
+      }
+    }
+  ]
+}
