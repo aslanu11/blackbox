@@ -1,0 +1,415 @@
+{
+  "fight_id": "pl-e01-f2",
+  "shots": [
+    {
+      "start_t": 0.0,
+      "end_t": 0.967,
+      "wide": true
+    },
+    {
+      "start_t": 0.967,
+      "end_t": 1.483,
+      "wide": false
+    },
+    {
+      "start_t": 1.483,
+      "end_t": 2.367,
+      "wide": true
+    },
+    {
+      "start_t": 2.367,
+      "end_t": 7.0,
+      "wide": true
+    },
+    {
+      "start_t": 7.0,
+      "end_t": 9.933,
+      "wide": true
+    },
+    {
+      "start_t": 9.933,
+      "end_t": 10.9,
+      "wide": false
+    },
+    {
+      "start_t": 10.9,
+      "end_t": 12.167,
+      "wide": true
+    },
+    {
+      "start_t": 12.167,
+      "end_t": 14.233,
+      "wide": true
+    },
+    {
+      "start_t": 14.233,
+      "end_t": 16.9,
+      "wide": true
+    },
+    {
+      "start_t": 16.9,
+      "end_t": 18.2,
+      "wide": true
+    },
+    {
+      "start_t": 18.2,
+      "end_t": 20.067,
+      "wide": true
+    },
+    {
+      "start_t": 20.067,
+      "end_t": 22.333,
+      "wide": true
+    },
+    {
+      "start_t": 22.333,
+      "end_t": 24.0,
+      "wide": true
+    },
+    {
+      "start_t": 24.0,
+      "end_t": 26.267,
+      "wide": false
+    },
+    {
+      "start_t": 26.267,
+      "end_t": 28.533,
+      "wide": true
+    },
+    {
+      "start_t": 28.533,
+      "end_t": 30.333,
+      "wide": true
+    },
+    {
+      "start_t": 30.333,
+      "end_t": 33.133,
+      "wide": true
+    },
+    {
+      "start_t": 33.133,
+      "end_t": 35.467,
+      "wide": false
+    },
+    {
+      "start_t": 35.467,
+      "end_t": 37.967,
+      "wide": true
+    },
+    {
+      "start_t": 37.967,
+      "end_t": 40.967,
+      "wide": true
+    },
+    {
+      "start_t": 40.967,
+      "end_t": 43.233,
+      "wide": true
+    },
+    {
+      "start_t": 43.233,
+      "end_t": 47.733,
+      "wide": true
+    },
+    {
+      "start_t": 47.733,
+      "end_t": 49.867,
+      "wide": true
+    },
+    {
+      "start_t": 49.867,
+      "end_t": 51.0,
+      "wide": false
+    },
+    {
+      "start_t": 51.0,
+      "end_t": 55.167,
+      "wide": true
+    },
+    {
+      "start_t": 55.167,
+      "end_t": 59.567,
+      "wide": true
+    },
+    {
+      "start_t": 59.567,
+      "end_t": 61.6,
+      "wide": false
+    },
+    {
+      "start_t": 61.6,
+      "end_t": 64.0,
+      "wide": true
+    },
+    {
+      "start_t": 64.0,
+      "end_t": 66.267,
+      "wide": false
+    },
+    {
+      "start_t": 66.267,
+      "end_t": 68.1,
+      "wide": false
+    },
+    {
+      "start_t": 68.1,
+      "end_t": 70.533,
+      "wide": true
+    },
+    {
+      "start_t": 70.533,
+      "end_t": 74.117,
+      "wide": false
+    },
+    {
+      "start_t": 74.117,
+      "end_t": 76.283,
+      "wide": false
+    },
+    {
+      "start_t": 76.283,
+      "end_t": 77.333,
+      "wide": true
+    },
+    {
+      "start_t": 77.333,
+      "end_t": 78.7,
+      "wide": false
+    },
+    {
+      "start_t": 78.7,
+      "end_t": 84.05,
+      "wide": false
+    },
+    {
+      "start_t": 84.05,
+      "end_t": 85.617,
+      "wide": false
+    },
+    {
+      "start_t": 85.617,
+      "end_t": 86.9,
+      "wide": false
+    },
+    {
+      "start_t": 86.9,
+      "end_t": 87.4,
+      "wide": false
+    },
+    {
+      "start_t": 87.4,
+      "end_t": 90.35,
+      "wide": false
+    },
+    {
+      "start_t": 90.35,
+      "end_t": 92.917,
+      "wide": false
+    },
+    {
+      "start_t": 92.917,
+      "end_t": 97.333,
+      "wide": false
+    },
+    {
+      "start_t": 97.333,
+      "end_t": 102.583,
+      "wide": false
+    },
+    {
+      "start_t": 102.583,
+      "end_t": 110.417,
+      "wide": false
+    },
+    {
+      "start_t": 110.417,
+      "end_t": 114.017,
+      "wide": false
+    },
+    {
+      "start_t": 114.017,
+      "end_t": 121.75,
+      "wide": false
+    },
+    {
+      "start_t": 121.75,
+      "end_t": 123.217,
+      "wide": false
+    },
+    {
+      "start_t": 123.217,
+      "end_t": 125.817,
+      "wide": false
+    },
+    {
+      "start_t": 125.817,
+      "end_t": 127.533,
+      "wide": false
+    },
+    {
+      "start_t": 127.533,
+      "end_t": 129.667,
+      "wide": false
+    },
+    {
+      "start_t": 129.667,
+      "end_t": 132.117,
+      "wide": false
+    },
+    {
+      "start_t": 132.117,
+      "end_t": 133.133,
+      "wide": false
+    },
+    {
+      "start_t": 133.133,
+      "end_t": 138.683,
+      "wide": false
+    },
+    {
+      "start_t": 138.683,
+      "end_t": 139.717,
+      "wide": false
+    },
+    {
+      "start_t": 139.717,
+      "end_t": 142.4,
+      "wide": false
+    },
+    {
+      "start_t": 142.4,
+      "end_t": 146.133,
+      "wide": false
+    },
+    {
+      "start_t": 146.133,
+      "end_t": 148.067,
+      "wide": false
+    },
+    {
+      "start_t": 148.067,
+      "end_t": 149.5,
+      "wide": false
+    },
+    {
+      "start_t": 149.5,
+      "end_t": 151.733,
+      "wide": false
+    },
+    {
+      "start_t": 151.733,
+      "end_t": 155.8,
+      "wide": false
+    },
+    {
+      "start_t": 155.8,
+      "end_t": 160.517,
+      "wide": false
+    },
+    {
+      "start_t": 160.517,
+      "end_t": 161.017,
+      "wide": false
+    },
+    {
+      "start_t": 161.017,
+      "end_t": 161.85,
+      "wide": false
+    },
+    {
+      "start_t": 161.85,
+      "end_t": 162.483,
+      "wide": false
+    },
+    {
+      "start_t": 162.483,
+      "end_t": 163.133,
+      "wide": false
+    },
+    {
+      "start_t": 163.133,
+      "end_t": 164.5,
+      "wide": false
+    },
+    {
+      "start_t": 164.5,
+      "end_t": 165.833,
+      "wide": false
+    },
+    {
+      "start_t": 165.833,
+      "end_t": 168.783,
+      "wide": false
+    },
+    {
+      "start_t": 168.783,
+      "end_t": 170.85,
+      "wide": false
+    },
+    {
+      "start_t": 170.85,
+      "end_t": 171.233,
+      "wide": true
+    },
+    {
+      "start_t": 171.233,
+      "end_t": 172.25,
+      "wide": false
+    },
+    {
+      "start_t": 172.25,
+      "end_t": 173.233,
+      "wide": false
+    },
+    {
+      "start_t": 173.233,
+      "end_t": 175.25,
+      "wide": false
+    },
+    {
+      "start_t": 175.25,
+      "end_t": 176.833,
+      "wide": false
+    },
+    {
+      "start_t": 176.833,
+      "end_t": 177.267,
+      "wide": false
+    },
+    {
+      "start_t": 177.267,
+      "end_t": 178.1,
+      "wide": false
+    },
+    {
+      "start_t": 178.1,
+      "end_t": 178.433,
+      "wide": false
+    },
+    {
+      "start_t": 178.433,
+      "end_t": 199.683,
+      "wide": false
+    },
+    {
+      "start_t": 199.683,
+      "end_t": 200.167,
+      "wide": true
+    },
+    {
+      "start_t": 200.167,
+      "end_t": 200.483,
+      "wide": true
+    },
+    {
+      "start_t": 200.483,
+      "end_t": 204.367,
+      "wide": false
+    },
+    {
+      "start_t": 204.367,
+      "end_t": 207.0,
+      "wide": false
+    }
+  ]
+}

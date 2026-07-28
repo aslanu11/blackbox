@@ -28,7 +28,12 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from dotenv import load_dotenv
+
 from . import schemas as S
+
+# The key lives in .env (gitignored); every entry point must see it.
+load_dotenv(S.ROOT / ".env")
 
 __phase__ = "A5"
 __owner__ = "Aslan"

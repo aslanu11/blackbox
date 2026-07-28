@@ -91,13 +91,70 @@ def parse_roster(html: str) -> list[dict]:
     return bots
 
 
+FANDOM = "https://battlebots.fandom.com/wiki"
+_LEAGUE_PAGE = f"{FANDOM}/BattleBots_Pro_League"
+
+
+def league_records() -> dict[str, str]:
+    """All 24 Pro League bots + W-L records from the group standings tables."""
+    import io
+
+    import pandas as pd
+
+    html = net.fetch(_LEAGUE_PAGE)
+    records: dict[str, str] = {}
+    for t in pd.read_html(io.StringIO(html)):
+        cols = [str(c) for c in t.columns]
+        if len(cols) == 3 and "Robot" in cols[1] and "Record" in cols[2]:
+            for _, r in t.iterrows():
+                records[str(r.iloc[1]).strip()] = str(r.iloc[2]).strip()
+    return records
+
+
+def bot_weapon(bot: str) -> str:
+    """Current weapon text from the bot's fandom infobox ('' if not found)."""
+    html = net.fetch(f"{FANDOM}/{bot.replace(' ', '_')}")
+    m = re.search(
+        r"pi-data-label[^>]*>\s*Weapon[^<]*<.*?pi-data-value[^>]*>(.*?)</div>",
+        html,
+        re.DOTALL,
+    )
+    if not m:
+        return ""
+    text = re.sub(r"<[^>]+>", " ", m.group(1))
+    return re.sub(r"\s+", " ", text).strip()
+
+
 def roster(url: str = ROSTER_URL) -> Path:
-    html = net.fetch(url)
-    bots = parse_roster(html)
+    """data/bots.csv for the whole league.
+
+    Primary source is the fandom wiki (standings for the roster + records,
+    per-bot infobox for the weapon) because battlebots.com renders its roster
+    client-side. The battlebots.com parser stays as a fallback.
+    """
     out = S.DATA_DIR / "bots.csv"
     out.parent.mkdir(parents=True, exist_ok=True)
+
+    records = league_records()
+    bots: list[dict] = []
+    if records:
+        for name, record in records.items():
+            weapon_text = bot_weapon(name)
+            bots.append(
+                {
+                    "name": name,
+                    "weapon_class": classify_weapon(weapon_text or name),
+                    "weapon_text": weapon_text,
+                    "record": record,
+                }
+            )
+        fieldnames = ["name", "weapon_class", "weapon_text", "record"]
+    else:  # fandom unreachable - try battlebots.com
+        bots = parse_roster(net.fetch(url))
+        fieldnames = ["name", "weapon_class", "weapon_text", "team"]
+
     with out.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["name", "weapon_class", "weapon_text", "team"])
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(bots)
     print(f"  {len(bots)} bots -> {out}")

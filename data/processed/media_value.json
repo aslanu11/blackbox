@@ -6,7 +6,7 @@
       "screen_s": 295.0,
       "attn_index": 4.06,
       "media_value": 1198.0,
-      "record": "0-0",
+      "record": "0-1",
       "perf_score": 0.0
     },
     {
@@ -15,8 +15,8 @@
       "screen_s": 295.0,
       "attn_index": 4.06,
       "media_value": 1198.0,
-      "record": "0-0",
-      "perf_score": 0.0
+      "record": "1-0",
+      "perf_score": 1.0
     },
     {
       "name": "HyperShock",
@@ -24,7 +24,7 @@
       "screen_s": 207.0,
       "attn_index": 4.27,
       "media_value": 884.1,
-      "record": "0-0",
+      "record": "0-1",
       "perf_score": 0.0
     },
     {
@@ -33,8 +33,8 @@
       "screen_s": 207.0,
       "attn_index": 4.27,
       "media_value": 884.1,
-      "record": "0-0",
-      "perf_score": 0.0
+      "record": "1-0",
+      "perf_score": 1.0
     },
     {
       "name": "End Game",
@@ -42,7 +42,7 @@
       "screen_s": 264.0,
       "attn_index": 2.95,
       "media_value": 778.1,
-      "record": "0-0",
+      "record": "0-1",
       "perf_score": 0.0
     },
     {
@@ -51,8 +51,8 @@
       "screen_s": 264.0,
       "attn_index": 2.95,
       "media_value": 778.1,
-      "record": "0-0",
-      "perf_score": 0.0
+      "record": "1-0",
+      "perf_score": 1.0
     },
     {
       "name": "Minotaur",
@@ -60,7 +60,7 @@
       "screen_s": 244.0,
       "attn_index": 1.54,
       "media_value": 375.0,
-      "record": "1-0",
+      "record": "2-0",
       "perf_score": 1.0
     },
     {
@@ -69,7 +69,7 @@
       "screen_s": 244.0,
       "attn_index": 1.54,
       "media_value": 375.0,
-      "record": "0-1",
+      "record": "0-2",
       "perf_score": 0.0
     },
     {
@@ -78,7 +78,7 @@
       "screen_s": 63.0,
       "attn_index": 0.0,
       "media_value": 0.0,
-      "record": "0-0",
+      "record": "0-1",
       "perf_score": 0.0
     },
     {
@@ -87,8 +87,8 @@
       "screen_s": 63.0,
       "attn_index": 0.0,
       "media_value": 0.0,
-      "record": "0-0",
-      "perf_score": 0.0
+      "record": "1-0",
+      "perf_score": 1.0
     },
     {
       "name": "Cobalt",
@@ -96,7 +96,7 @@
       "screen_s": 190.0,
       "attn_index": 0.0,
       "media_value": 0.0,
-      "record": "0-0",
+      "record": "0-1",
       "perf_score": 0.0
     },
     {
@@ -105,8 +105,8 @@
       "screen_s": 190.0,
       "attn_index": 0.0,
       "media_value": 0.0,
-      "record": "0-0",
-      "perf_score": 0.0
+      "record": "1-0",
+      "perf_score": 1.0
     }
   ]
 }

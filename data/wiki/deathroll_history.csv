@@ -1,0 +1,21 @@
+bot,season,stage,opponent,won,method,result_text
+DeathRoll,World Championship Tournament  Qualifiers,Qualifier,Captain Shrederator,False,ko,Lost (KO)
+DeathRoll,Exhibition Matches,Rumble,"Bucktooth Burl, Skorpios",False,ko,Lost (KO)
+DeathRoll,Fight Nights,Fight Night #1,End Game,True,ko,Won (KO)
+DeathRoll,Fight Nights,Fight Night #2 (Untelevised),Foxtrot,True,ko,Won (KO)
+DeathRoll,Fight Nights,Fight Night #3,Quantum,True,ko,Won (KO)
+DeathRoll,Fight Nights,Fight Night #4 - Main Event,ROTATOR,True,jd,Won (JD)
+DeathRoll,"World Championship Tournament #6 Seed, Semi-Finals",Round of 16,Yeti,True,ko,Won (KO)
+DeathRoll,"World Championship Tournament #6 Seed, Semi-Finals",Quarter-Final,Minotaur,True,ko,Won (KO)
+DeathRoll,"World Championship Tournament #6 Seed, Semi-Finals",Semi-Final,Witch Doctor,False,jd,Lost (Split JD)
+DeathRoll,Fight Nights,Fight Night #1,Cobalt,False,ko,Lost (KO)
+DeathRoll,Fight Nights,Fight Night #2,Switchback,True,ko,Won (KO)
+DeathRoll,Fight Nights,Fight Night #3,Mammoth,True,ko,Won (KO)
+DeathRoll,Fight Nights,Fight Night #4,Monsoon,False,ko,Lost (KO)
+DeathRoll,"World Championship Tournament #29 Seed, Round of 32",Round of 32,Hydra,False,jd,Lost (JD)
+DeathRoll,Exhibition Matches,Exhibition Match,ROTATOR,False,ko,Lost (KO)
+DeathRoll,Sin City Slugfest III  Semi-Finals,Quarter-Final,Slammo!,True,ko,Won (KO)
+DeathRoll,Sin City Slugfest III  Semi-Finals,Semi-Final,Gigabyte,False,ko,Lost (KO)
+DeathRoll,Group D TBD,Round Robin Match #1,Golden Fury,False,jd,Lost (Split JD)
+DeathRoll,Group D TBD,Round Robin Match #?,End Game,False,,TBD
+DeathRoll,Group D TBD,Round Robin Match #?,Malice,False,,TBD

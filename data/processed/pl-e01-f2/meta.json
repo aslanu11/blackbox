@@ -10,7 +10,7 @@
     "HUGE": "#8CC63E"
   },
   "result": {
-    "winner": null,
+    "winner": "HUGE",
     "method": null,
     "time_s": null
   },

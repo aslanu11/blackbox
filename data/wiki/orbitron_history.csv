@@ -1,0 +1,14 @@
+bot,season,stage,opponent,won,method,result_text
+Orbitron,BattleBots Proving Ground,Exhibition Match #1,Roundhouse,False,ko,Lost (KO)
+Orbitron,BattleBots Proving Ground,Exhibition Match #2,Roundhouse,False,ko,Lost (KO)
+Orbitron,BattleBots Proving Ground,Exhibition Match #3,Disarray,True,ko,Won (KO)
+Orbitron,BattleBots Proving Ground,Exhibition Match #4,Disarray,True,ko,Won (KO)
+Orbitron,"Episode 1 (Group F) 1-2, 4th Place",Round Robin Match #1,Valkyrie,True,ko,Won (KO)
+Orbitron,"Episode 1 (Group F) 1-2, 4th Place",Round Robin Match #2,HyperShock,False,ko,Lost (KO)
+Orbitron,"Episode 1 (Group F) 1-2, 4th Place",Round Robin Match #3,Tombstone,False,ko,Lost (KO)
+Orbitron,"Episode 7 (Battle of the Verts) 2-1, Joint 1st Place",Round Robin Match #1,Terrortops,False,ko,Lost (KO)
+Orbitron,"Episode 7 (Battle of the Verts) 2-1, Joint 1st Place",Round Robin Match #2,JackPot,True,ko,Won (KO)
+Orbitron,"Episode 7 (Battle of the Verts) 2-1, Joint 1st Place",Round Robin Match #3,Magnitude,True,ko,Won (KO)
+Orbitron,Group F,Round Robin Match #1,Witch Doctor,False,ko,Lost (TKO)
+Orbitron,Group F,Round Robin Match #?,Ribbot,False,,TBD
+Orbitron,Group F,Round Robin Match #?,Switchback,False,,TBD

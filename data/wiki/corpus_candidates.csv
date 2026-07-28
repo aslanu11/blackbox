@@ -1,0 +1,90 @@
+bot,season,stage,opponent,won,method,result_text,split
+End Game,"World Championship Tournament #6 Seed, World Champion",Round of 16,ROTATOR,True,jd,Won (Split JD),True
+DeathRoll,"World Championship Tournament #6 Seed, Semi-Finals",Semi-Final,Witch Doctor,False,jd,Lost (Split JD),True
+Witch Doctor,"World Championship Tournament #2 Seed, Runner-Up",Semi-Final,DeathRoll,True,jd,Won (Split JD),True
+Bloodsport,"World Championship Tournament #2 Seed, Round of 16",Round of 32,Gruff,True,jd,Won (Split JD),True
+Bloodsport,"World Championship Tournament #2 Seed, Round of 16",Round of 16,Tantrum,False,jd,Lost (Split JD),True
+HUGE,"World Championship Tournament #12 Seed, Round of 16",Round of 16,Whiplash,False,jd,Lost (Split JD),True
+End Game,USA vs. The World Representing the Rest of the World,USA vs. The World,SawBlaze,False,jd,Lost (Split JD),True
+Bloodsport,Sin City Slugfest IV Golden Bolt Qualifier,Final,Blacksmith,True,jd,Won (Split JD),True
+Bloodsport,Sin City Slugfest IV Golden Bolt Qualifier,Golden Bolt Qualifier,Skorpios,False,jd,Lost (Split JD),True
+DeathRoll,Group D TBD,Round Robin Match #1,Golden Fury,False,jd,Lost (Split JD),True
+Golden Fury,Group D TBD,Round Robin Match #1,DeathRoll,True,jd,Won (Split JD),True
+End Game,"Golden Bolt Tournament Qualified as World Champion V, Golden Bolt Champion",Final,SawBlaze,True,jd,Won (Split JD),True
+HUGE,Fight Nights,Fight Night #2,Free Shipping,True,jd,Won (Split JD),True
+HyperShock,Fight Nights,Fight Night #4,Skorpios,False,jd,Lost (Split JD),True
+Malice,Fight Nights,Fight Night #2,Shatter!,True,jd,Won (Split JD),True
+Witch Doctor,Fight Nights,Fight Night #1 - Main Event,Hydra,False,jd,Lost (Split JD),True
+Witch Doctor,Fight Nights,Fight Night #2,Fusion,True,jd,Won (Split JD),True
+Bloodsport,Exhibition Matches,Exhibition Match,Riptide,False,jd,Lost (Split JD),True
+End Game,"World Championship Tournament #7 Seed, Round of 16",Round of 32,Tantrum,True,jd,Won (JD),False
+End Game,"World Championship Tournament #7 Seed, Round of 16",Round of 16,Copperhead,False,jd,Lost (JD),False
+HUGE,"World Championship Tournament #6 Seed, Runner-Up",Round of 16,MadCatter,True,jd,Won (JD),False
+HUGE,"World Championship Tournament #6 Seed, Runner-Up",Quarter-Final,Witch Doctor,True,jd,Won (JD),False
+HUGE,"World Championship Tournament #6 Seed, Runner-Up",Final,SawBlaze,False,jd,Lost (JD),False
+Witch Doctor,"World Championship Tournament #3 Seed, Quarter-Finals",Quarter-Final,HUGE,False,jd,Lost (JD),False
+DeathRoll,"World Championship Tournament #29 Seed, Round of 32",Round of 32,Hydra,False,jd,Lost (JD),False
+HUGE,"World Championship Tournament #25 Seed, Round of 32",Round of 32,Whiplash,False,jd,Lost (JD),False
+Witch Doctor,"World Championship Tournament #23 Seed, Round of 16",Round of 32,Skorpios,True,jd,Won (JD),False
+HyperShock,"World Championship Tournament #18 Seed, Round of 16",Round of 32,Lucky,True,jd,Won (JD),False
+Bloodsport,"World Championship Tournament #17 Seed, Round of 32",Round of 32,Minotaur,False,jd,Lost (JD),False
+Malice,"World Championship Tournament #17 Seed, Round of 16",Round of 32,Switchback,True,jd,Won (JD),False
+Malice,"World Championship Tournament #17 Seed, Round of 16",Round of 16,Minotaur,False,jd,Lost (JD),False
+Minotaur,"World Championship Tournament #16 Seed, Quarter-Finals",Round of 32,Bloodsport,True,jd,Won (JD),False
+Minotaur,"World Championship Tournament #16 Seed, Quarter-Finals",Round of 16,End Game,True,jd,Won (JD),False
+Minotaur,"World Championship Tournament #16 Seed, Quarter-Finals",Quarter-Final,Witch Doctor,False,jd,Lost (JD),False
+HyperShock,"World Championship Tournament #13 Seed, Round of 32",Round of 32,P1,False,jd,Lost (JD),False
+End Game,"World Championship Tournament #1 Seed, Round of 16",Round of 16,Minotaur,False,jd,Lost (JD),False
+Minotaur,"World Championship Tournament #1 Seed, Quarter-Finals",Round of 16,Malice,True,jd,Won (JD),False
+HUGE,Witch Doctor Bounty  Semi-Finals,Quarter-Final,Slap Box,True,jd,Won (JD),False
+HUGE,Witch Doctor Bounty  Semi-Finals,Semi-Final,Malice,False,jd,Lost (JD),False
+HyperShock,Sin City Slugfest V  Runner-Up,Quarter-Final,Starchild,True,jd,Won (JD),False
+HyperShock,Sin City Slugfest V  Runner-Up,Semi-Final,Claw Viper,True,jd,Won (JD),False
+HyperShock,Sin City Slugfest V  Runner-Up,Final,RIPperoni,False,jd,Lost (JD),False
+Cobalt,Sin City Slugfest IV Runner-Up,Quarter-Final,Banshee,True,jd,Won (JD),False
+Malice,Sin City Slugfest II Semi-Finals,Semi-Final,Ribbot,False,jd,Lost (JD),False
+HUGE,Sin City Slugfest II Quarter-Finals,Quarter-Final,Deep Six,False,jd,Lost (JD),False
+HyperShock,Sin City Slugfest I Champion,Quarter-Final,DUCK!,True,jd,Won (JD),False
+Witch Doctor,"NOTE: Witch Doctor was originally drawn against Glitch, the #9 seed. Upon Glitch's withdrawal, Mammoth directly replaced it as a substitute.",Quarter-Final,Minotaur,True,jd,Won (JD),False
+End Game,"Golden Bolt Tournament Qualified as World Champion V, Golden Bolt Champion",Semi-Final,Tantrum,True,jd,Won (JD),False
+Bloodsport,"Fight Nights 3-2, Play-In Matches",Fight Night #1,Lucky,True,jd,Won (JD),False
+HyperShock,"Fight Nights 3-2, Play-In Matches",Fight Night #3 - Main Event,Bite Force,False,jd,Lost (JD),False
+Cobalt,"Fight Nights 2-3, Play-In Matches",Play-In Match,Minotaur,False,jd,Lost (JD),False
+Malice,"Fight Nights 1-2, Play-In Matches",Fight Night #1,Tantrum,False,jd,Lost (JD),False
+Malice,"Fight Nights 1-2, Play-In Matches",Fight Night #3,Blacksmith,True,jd,Won (JD),False
+Malice,"Fight Nights 1-2, Play-In Matches",Play-In Match,Skorpios,False,jd,Lost (JD),False
+Minotaur,"Fight Nights 1-2, Desperado Runner-Up",Fight Night #1 - Main Event,Whiplash,False,jd,Lost (JD),False
+Minotaur,"Fight Nights 1-2, Desperado Runner-Up",Fight Night #2,Gigabyte,False,jd,Lost (JD),False
+Minotaur,"Fight Nights 1-2, Desperado Runner-Up","Desperado Tournament, Final",Black Dragon,False,jd,Lost (JD),False
+Minotaur,"Fight Nights 1-2, Desperado Runner-Up",Play-In Match,Cobalt,True,jd,Won (JD),False
+Bloodsport,Fight Nights,Fight Night #3,Chronos,True,jd,Won (JD),False
+Bloodsport,Fight Nights,Fight Night #3,Claw Viper,True,jd,Won (JD),False
+Bloodsport,Fight Nights,Fight Night #4,Beta,False,jd,Lost (JD),False
+DeathRoll,Fight Nights,Fight Night #4 - Main Event,ROTATOR,True,jd,Won (JD),False
+End Game,Fight Nights,Fight Night #1 - Main Event,Blip,True,jd,Won (JD),False
+HUGE,Fight Nights,Fight Night #1,SubZero,True,jd,Won (JD),False
+HUGE,Fight Nights,Fight Night #3,Chomp,True,jd,Won (JD),False
+HUGE,Fight Nights,Fight Night #3,Gigabyte,True,jd,Won (JD),False
+HUGE,Fight Nights,Fight Night #4 - Main Event,Bronco,True,jd,Won (JD),False
+HUGE,Fight Nights,Fight Night #2,Hydra,False,jd,Lost (JD),False
+HUGE,Fight Nights,Fight Night #3,Kraken,True,jd,Won (JD),False
+HUGE,Fight Nights,Fight Night #2,Blip,True,jd,Won (JD),False
+HUGE,Fight Nights,Fight Night #4,Starchild,True,jd,Won (JD),False
+Malice,Fight Nights,Fight Night #1,Lock-Jaw,False,jd,Lost (JD),False
+Malice,Fight Nights,Fight Night #3,Valkyrie,True,jd,Won (JD),False
+Minotaur,Fight Nights,Fight Night #2,Hypothermia,True,jd,Won (JD),False
+Minotaur,Fight Nights,Fight Night #3 - Main Event,Blacksmith,True,jd,Won (JD),False
+Minotaur,Fight Nights,Fight Night #1,SawBlaze,False,jd,Lost (JD),False
+Minotaur,Fight Nights,Fight Night #4 - Main Event,Witch Doctor,True,jd,Won (JD),False
+Witch Doctor,Fight Nights,Fight Night #2,Blacksmith,True,jd,Won (JD),False
+Witch Doctor,Fight Nights,Fight Night #1,Shatter!,True,jd,Won (JD),False
+Witch Doctor,Fight Nights,Fight Night #3 - Main Event,Whiplash,True,jd,Won (JD),False
+Witch Doctor,Fight Nights,Fight Night #2 - Main Event,Kraken,False,jd,Lost (JD),False
+Witch Doctor,Fight Nights,Fight Night #1,DUCK!,True,jd,Won (JD),False
+Witch Doctor,Fight Nights,Fight Night #4 - Main Event,Minotaur,False,jd,Lost (JD),False
+Bloodsport,Exhibition Matches,Exhibition Match,Big Dill,False,jd,Lost (JD),False
+Malice,Exhibition Matches,Exhibition Match,Captain Shrederator,True,jd,Won (JD),False
+Malice,Bounty Hunters - Witch Doctor Bounty  Final,Semi-Final,HUGE,True,jd,Won (JD),False
+HyperShock,Bounty Hunters - Icewave Bounty  Final,Quarter-Final,Sporkinok,True,jd,Won (JD),False
+HyperShock,Bounty Hunters - Icewave Bounty  Final,Final,Skorpios,False,jd,Lost (JD),False
+Bloodsport,Bounty Hunters - Beta Bounty Final,Final,Lock-Jaw,False,jd,Lost (JD),False

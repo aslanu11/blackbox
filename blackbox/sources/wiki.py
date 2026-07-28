@@ -44,6 +44,48 @@ def _classify_method(result_text: str) -> str | None:
     return None
 
 
+def parse_history_tables(bot: str, tables: list[pd.DataFrame]) -> list[dict]:
+    """Fandom's fight-history widget renders as 3 columns:
+
+        stage | "vs. Opponent (seed)" | "Won (KO)" / "Lost (Split JD)" / ...
+
+    Season/competition headers are merged rows where all three columns carry
+    the same text. Pure function so tests can feed it synthetic tables.
+    """
+    rows: list[dict] = []
+    for table in tables:
+        if table.shape[1] != 3:
+            continue
+        vals = table.fillna("").astype(str).values
+        if not any(v[1].strip().lower().startswith("vs.") for v in vals):
+            continue
+        season = None
+        for c0, c1, c2 in vals:
+            c0, c1, c2 = c0.strip(), c1.strip(), c2.strip()
+            if c0 == c1 == c2 and c0 and not c1.lower().startswith("vs."):
+                if c0.upper() != bot.upper():  # skip the bot-name banner row
+                    season = re.sub(r"\s+\d+-\d+$", "", c0)  # strip "  2-1" records
+                continue
+            if not c1.lower().startswith("vs."):
+                continue
+            opponent = re.sub(r"^vs\.\s*", "", c1, flags=re.IGNORECASE)
+            opponent = re.sub(r"\s*\(\d+\)\s*$", "", opponent).strip()  # seed "(3)"
+            if not opponent:
+                continue
+            rows.append(
+                {
+                    "bot": bot,
+                    "season": season,
+                    "stage": c0 or None,
+                    "opponent": opponent,
+                    "won": c2.lower().startswith("w"),
+                    "method": _classify_method(c2),
+                    "result_text": c2,
+                }
+            )
+    return rows
+
+
 def bot_history(bot: str) -> Path:
     """Fight-history tables from a bot's fandom page -> normalised CSV."""
     html = net.fetch(f"{BASE}/{_slug(bot)}")
@@ -51,41 +93,11 @@ def bot_history(bot: str) -> Path:
         tables = pd.read_html(io.StringIO(html))
     except ValueError:
         tables = []
-
-    rows: list[dict] = []
-    for table in tables:
-        cols = [str(c).strip().lower() for c in table.columns.get_level_values(-1)]
-        table.columns = cols
-        # A fight table has an opponent-ish column and a result-ish column.
-        opp_col = next((c for c in cols if "opponent" in c or "vs" in c), None)
-        res_col = next((c for c in cols if "result" in c or "win/loss" in c or "outcome" in c), None)
-        if not opp_col or not res_col:
-            continue
-        season_col = next((c for c in cols if "season" in c or "event" in c or "year" in c), None)
-        time_col = next((c for c in cols if "time" in c or "length" in c), None)
-        for _, r in table.iterrows():
-            try:
-                opponent = str(r[opp_col]).strip()
-                result_text = str(r[res_col]).strip()
-                if not opponent or opponent.lower() in ("nan", ""):
-                    continue
-                rows.append(
-                    {
-                        "bot": bot,
-                        "season": str(r[season_col]).strip() if season_col else None,
-                        "opponent": opponent,
-                        "won": result_text.lower().startswith("w"),
-                        "method": _classify_method(result_text),
-                        "result_text": result_text,
-                        "time": str(r[time_col]).strip() if time_col else None,
-                    }
-                )
-            except (KeyError, TypeError):
-                continue  # one bad row never kills the table
+    rows = parse_history_tables(bot, tables)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     out = OUT_DIR / f"{_slug(bot).lower()}_history.csv"
-    pd.DataFrame(rows).to_csv(out, index=False)
+    pd.DataFrame(rows, columns=["bot", "season", "stage", "opponent", "won", "method", "result_text"]).to_csv(out, index=False)
     return out
 
 

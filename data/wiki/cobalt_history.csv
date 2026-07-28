@@ -1,0 +1,31 @@
+bot,season,stage,opponent,won,method,result_text
+Cobalt,"World Championship Tournament #14 Seed, Round of 32",Qualifier,Overhaul,True,ko,Won (KO)
+Cobalt,"World Championship Tournament #14 Seed, Round of 32",Round of 32,Bombshell,False,ko,Lost (KO)
+Cobalt,"Fight Nights 2-3, Play-In Matches",Fight Night #1,SubZero,True,ko,Won (KO)
+Cobalt,"Fight Nights 2-3, Play-In Matches",Fight Night #2,DUCK!,False,ko,Lost (KO)
+Cobalt,"Fight Nights 2-3, Play-In Matches",Fight Night #3,Bombshell,True,ko,Won (KO)
+Cobalt,"Fight Nights 2-3, Play-In Matches",Fight Night #4,End Game,False,ko,Lost (KO)
+Cobalt,"Fight Nights 2-3, Play-In Matches",Play-In Match,Minotaur,False,jd,Lost (JD)
+Cobalt,Fight Nights,Fight Night #1,Fusion,False,ko,Lost (KO)
+Cobalt,Fight Nights,Fight Night #2,Ghost Raptor,True,ko,Won (KO)
+Cobalt,Fight Nights,Fight Night #3,Gruff,True,ko,Won (KO)
+Cobalt,"World Championship Tournament #14 Seed, Quarter-Finals",Round of 32,Yeti,True,ko,Won (KO)
+Cobalt,"World Championship Tournament #14 Seed, Quarter-Finals",Round of 16,Whiplash,True,ko,"Won (Double KO, Split JD)"
+Cobalt,"World Championship Tournament #14 Seed, Quarter-Finals",Quarter-Final,Tantrum,False,ko,Lost (KO)
+Cobalt,Exhibition Matches,Exhibition Match #1,Pardon My French,True,ko,Won (KO)
+Cobalt,re:MARS all:STARS BattleBots Challenge (2022)  Semi-Finals,Quarter-Final,Skorpios,True,,Won (Crowd)
+Cobalt,re:MARS all:STARS BattleBots Challenge (2022)  Semi-Finals,Semi-Final,Hydra,False,ko,Lost (KO)
+Cobalt,Fight Nights,Fight Night #1,DeathRoll,True,ko,Won (KO)
+Cobalt,Fight Nights,Fight Night #2 - Main Event,Minotaur,False,ko,Lost (KO)
+Cobalt,Fight Nights,Fight Night #3,Overhaul,True,ko,Won (KO)
+Cobalt,Fight Nights,Fight Night #4,Lucky,True,ko,Won (KO)
+Cobalt,"World Championship Tournament #9 Seed, Round of 32",Round of 32,Monsoon,False,ko,Lost (KO)
+Cobalt,Sin City Slugfest IV Runner-Up,Quarter-Final,Banshee,True,jd,Won (JD)
+Cobalt,Sin City Slugfest IV Runner-Up,Semi-Final,Emulsifier,True,ko,Won (KO)
+Cobalt,Sin City Slugfest IV Runner-Up,Final,JackPot,False,ko,Lost (KO)
+Cobalt,Group H TBD,Round Robin Match #?,Hot Mess,False,,TBD
+Cobalt,Group H TBD,Round Robin Match #?,Warthog,False,,TBD
+Cobalt,Group H TBD,Round Robin Match #?,Slammo!,False,,TBD
+Cobalt,Group C,Round Robin Match #1,The Twins,False,ko,Lost (KO)
+Cobalt,Group C,Round Robin Match #?,Copperhead,False,,TBD
+Cobalt,Group C,Round Robin Match #?,JackPot,False,,TBD
