@@ -1,0 +1,100 @@
+[
+  {
+    "fight_id": "fixture-001",
+    "bots": [
+      "Minotaur",
+      "Bloodsport"
+    ],
+    "actual_winner": "Minotaur",
+    "generic_pick": "Minotaur",
+    "generic_p": 0.5717,
+    "generic_correct": true,
+    "main_pick": null,
+    "main_p": null,
+    "main_correct": null
+  },
+  {
+    "fight_id": "pl-e01-f1",
+    "bots": [
+      "DeathRoll",
+      "Golden Fury"
+    ],
+    "actual_winner": "Golden Fury",
+    "generic_pick": "DeathRoll",
+    "generic_p": 0.5131,
+    "generic_correct": false,
+    "main_pick": null,
+    "main_p": null,
+    "main_correct": null
+  },
+  {
+    "fight_id": "pl-e01-f2",
+    "bots": [
+      "HyperShock",
+      "HUGE"
+    ],
+    "actual_winner": "HUGE",
+    "generic_pick": "HUGE",
+    "generic_p": 0.492,
+    "generic_correct": true,
+    "main_pick": null,
+    "main_p": null,
+    "main_correct": null
+  },
+  {
+    "fight_id": "pl-e01-f3",
+    "bots": [
+      "End Game",
+      "Malice"
+    ],
+    "actual_winner": "Malice",
+    "generic_pick": "End Game",
+    "generic_p": 0.5822,
+    "generic_correct": false,
+    "main_pick": null,
+    "main_p": null,
+    "main_correct": null
+  },
+  {
+    "fight_id": "pl-e04-f1",
+    "bots": [
+      "Orbitron",
+      "Witch Doctor"
+    ],
+    "actual_winner": "Witch Doctor",
+    "generic_pick": "Witch Doctor",
+    "generic_p": 0.4255,
+    "generic_correct": true,
+    "main_pick": null,
+    "main_p": null,
+    "main_correct": null
+  },
+  {
+    "fight_id": "pl-e04-f2",
+    "bots": [
+      "Bloodsport",
+      "Minotaur"
+    ],
+    "actual_winner": "Minotaur",
+    "generic_pick": "Minotaur",
+    "generic_p": 0.3829,
+    "generic_correct": true,
+    "main_pick": "Bloodsport",
+    "main_p": 0.5,
+    "main_correct": false
+  },
+  {
+    "fight_id": "pl-e04-f3",
+    "bots": [
+      "Cobalt",
+      "The Twins"
+    ],
+    "actual_winner": "The Twins",
+    "generic_pick": "Cobalt",
+    "generic_p": 0.5521,
+    "generic_correct": false,
+    "main_pick": null,
+    "main_p": null,
+    "main_correct": null
+  }
+]

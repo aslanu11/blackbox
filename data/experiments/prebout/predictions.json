@@ -1,0 +1,93 @@
+[
+  {
+    "fight_id": "fixture-001",
+    "episode": 0,
+    "bots": [
+      "Minotaur",
+      "Bloodsport"
+    ],
+    "winner": "Minotaur",
+    "prebout_p": 0.5717,
+    "outcome": 1,
+    "momentum_earliest_p": null,
+    "momentum_final_p": null
+  },
+  {
+    "fight_id": "pl-e01-f1",
+    "episode": 1,
+    "bots": [
+      "DeathRoll",
+      "Golden Fury"
+    ],
+    "winner": "Golden Fury",
+    "prebout_p": 0.5131,
+    "outcome": 0,
+    "momentum_earliest_p": null,
+    "momentum_final_p": null
+  },
+  {
+    "fight_id": "pl-e01-f2",
+    "episode": 1,
+    "bots": [
+      "HyperShock",
+      "HUGE"
+    ],
+    "winner": "HUGE",
+    "prebout_p": 0.492,
+    "outcome": 0,
+    "momentum_earliest_p": null,
+    "momentum_final_p": null
+  },
+  {
+    "fight_id": "pl-e01-f3",
+    "episode": 1,
+    "bots": [
+      "End Game",
+      "Malice"
+    ],
+    "winner": "Malice",
+    "prebout_p": 0.5822,
+    "outcome": 0,
+    "momentum_earliest_p": null,
+    "momentum_final_p": null
+  },
+  {
+    "fight_id": "pl-e04-f1",
+    "episode": 4,
+    "bots": [
+      "Orbitron",
+      "Witch Doctor"
+    ],
+    "winner": "Witch Doctor",
+    "prebout_p": 0.4255,
+    "outcome": 0,
+    "momentum_earliest_p": null,
+    "momentum_final_p": null
+  },
+  {
+    "fight_id": "pl-e04-f2",
+    "episode": 4,
+    "bots": [
+      "Bloodsport",
+      "Minotaur"
+    ],
+    "winner": "Minotaur",
+    "prebout_p": 0.3829,
+    "outcome": 0,
+    "momentum_earliest_p": 0.5,
+    "momentum_final_p": 0.1541
+  },
+  {
+    "fight_id": "pl-e04-f3",
+    "episode": 4,
+    "bots": [
+      "Cobalt",
+      "The Twins"
+    ],
+    "winner": "The Twins",
+    "prebout_p": 0.5521,
+    "outcome": 0,
+    "momentum_earliest_p": null,
+    "momentum_final_p": null
+  }
+]

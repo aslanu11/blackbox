@@ -1,0 +1,8 @@
+fight_id,bots,actual_winner,generic_pick,generic_p,generic_correct,main_pick,main_p,main_correct
+fixture-001,Minotaur vs Bloodsport,Minotaur,Minotaur,0.5717,True,,,
+pl-e01-f1,DeathRoll vs Golden Fury,Golden Fury,DeathRoll,0.5131,False,,,
+pl-e01-f2,HyperShock vs HUGE,HUGE,HUGE,0.492,True,,,
+pl-e01-f3,End Game vs Malice,Malice,End Game,0.5822,False,,,
+pl-e04-f1,Orbitron vs Witch Doctor,Witch Doctor,Witch Doctor,0.4255,True,,,
+pl-e04-f2,Bloodsport vs Minotaur,Minotaur,Minotaur,0.3829,True,Bloodsport,0.5,False
+pl-e04-f3,Cobalt vs The Twins,The Twins,Cobalt,0.5521,False,,,
