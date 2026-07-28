@@ -52,8 +52,16 @@ def event_lift(attention: S.Attention, events: S.Events) -> list[S.EventLift]:
     return lifts
 
 
-def fuse(fight_id: str) -> Path:
-    """attention.json + events.json -> attention.json with event_lift filled."""
+def fuse(fight_id: str) -> Path | None:
+    """attention.json + events.json -> attention.json with event_lift filled.
+
+    A fight with no attention data (YouTube hasn't published a most-replayed
+    heatmap for its episode yet) is a normal, honest state - the frontend
+    renders the lane empty. Skip, never crash and never fabricate.
+    """
+    if not S.exists(fight_id, "attention"):
+        print(f"  no attention.json for {fight_id} (no heatmap published yet) - lane stays empty")
+        return None
     attention = S.load_attention(fight_id)
     events = S.load_events(fight_id)
     attention.event_lift = event_lift(attention, events)

@@ -19,24 +19,6 @@
       "perf_score": 1.0
     },
     {
-      "name": "HyperShock",
-      "fights": 1,
-      "screen_s": 207.0,
-      "attn_index": 4.27,
-      "media_value": 884.1,
-      "record": "0-1",
-      "perf_score": 0.0
-    },
-    {
-      "name": "HUGE",
-      "fights": 1,
-      "screen_s": 207.0,
-      "attn_index": 4.27,
-      "media_value": 884.1,
-      "record": "1-0",
-      "perf_score": 1.0
-    },
-    {
       "name": "End Game",
       "fights": 1,
       "screen_s": 264.0,
@@ -57,20 +39,38 @@
     {
       "name": "Minotaur",
       "fights": 2,
-      "screen_s": 244.0,
+      "screen_s": 182.4,
       "attn_index": 1.54,
-      "media_value": 375.0,
+      "media_value": 280.4,
       "record": "2-0",
       "perf_score": 1.0
     },
     {
       "name": "Bloodsport",
       "fights": 2,
-      "screen_s": 244.0,
+      "screen_s": 182.4,
       "attn_index": 1.54,
-      "media_value": 375.0,
+      "media_value": 280.4,
       "record": "0-2",
       "perf_score": 0.0
+    },
+    {
+      "name": "HyperShock",
+      "fights": 1,
+      "screen_s": 82.0,
+      "attn_index": 2.98,
+      "media_value": 244.5,
+      "record": "0-1",
+      "perf_score": 0.0
+    },
+    {
+      "name": "HUGE",
+      "fights": 1,
+      "screen_s": 82.0,
+      "attn_index": 2.98,
+      "media_value": 244.5,
+      "record": "1-0",
+      "perf_score": 1.0
     },
     {
       "name": "Orbitron",

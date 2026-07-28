@@ -50,8 +50,7 @@
   "kept_angles": [
     0,
     1,
-    2,
-    3
+    2
   ],
   "angles": [
     {
@@ -107,7 +106,7 @@
         35
       ],
       "time_s": 7.03,
-      "kept": true,
+      "kept": false,
       "elevated": true,
       "yellow_band_frac": 0.428,
       "example_frame": "C:\\Users\\Aslan\\Downloads\\blackbox\\data\\frames\\pl-e04-f2\\key\\frame_000077.jpg"

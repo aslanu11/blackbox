@@ -1,0 +1,82 @@
+{
+  "fight_id": "pl-e04-f2",
+  "events": [
+    {
+      "t": 10.5,
+      "type": "hazard",
+      "magnitude": 47.28,
+      "actor": null,
+      "target": "Bloodsport"
+    },
+    {
+      "t": 13.5,
+      "type": "hazard",
+      "magnitude": 42.19,
+      "actor": null,
+      "target": "Bloodsport"
+    },
+    {
+      "t": 15.0,
+      "type": "hit",
+      "magnitude": 16.24,
+      "actor": "Minotaur",
+      "target": "Bloodsport"
+    },
+    {
+      "t": 21.4,
+      "type": "hazard",
+      "magnitude": 50.23,
+      "actor": null,
+      "target": "Bloodsport"
+    },
+    {
+      "t": 24.2,
+      "type": "hit",
+      "magnitude": 0.99,
+      "actor": "Minotaur",
+      "target": "Bloodsport"
+    },
+    {
+      "t": 29.3,
+      "type": "hit",
+      "magnitude": 0.5,
+      "actor": "Bloodsport",
+      "target": "Minotaur"
+    },
+    {
+      "t": 48.1,
+      "type": "hit",
+      "magnitude": 10.85,
+      "actor": "Bloodsport",
+      "target": "Minotaur"
+    },
+    {
+      "t": 48.7,
+      "type": "hazard",
+      "magnitude": 48.65,
+      "actor": null,
+      "target": "Bloodsport"
+    },
+    {
+      "t": 81.5,
+      "type": "hazard",
+      "magnitude": 113.62,
+      "actor": null,
+      "target": "Bloodsport"
+    },
+    {
+      "t": 82.3,
+      "type": "hit",
+      "magnitude": 0.5,
+      "actor": "Bloodsport",
+      "target": "Minotaur"
+    },
+    {
+      "t": 95.9,
+      "type": "hit",
+      "magnitude": 0.5,
+      "actor": "Bloodsport",
+      "target": "Minotaur"
+    }
+  ]
+}

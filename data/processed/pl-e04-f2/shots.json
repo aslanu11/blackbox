@@ -134,7 +134,7 @@
     {
       "start_t": 75.65,
       "end_t": 78.15,
-      "wide": true
+      "wide": false
     },
     {
       "start_t": 78.15,
@@ -179,7 +179,7 @@
     {
       "start_t": 101.483,
       "end_t": 106.017,
-      "wide": true
+      "wide": false
     },
     {
       "start_t": 106.017,

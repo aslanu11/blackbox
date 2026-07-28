@@ -27,10 +27,17 @@ from .. import schemas as S
 __phase__ = "B3"
 __owner__ = "Aslan"
 
-# Hand-tuned weights. logit = W_CONTROL*control + W_HITS*hit_diff + W_MOBILITY*mob_diff
+# Hand-tuned weights. Each channel's contribution is BOUNDED (tanh squash on
+# the open-ended hit differential, clamp on the total) so no single stream of
+# evidence can saturate the curve. Real fights produce rolling hit
+# differentials of +/-17; linear at 0.25/point that alone pinned P at 0.0001
+# for most of a fight - false certainty the product must never display.
 W_CONTROL = 1.2
-W_HITS = 0.25  # per point of rolling hit-magnitude differential
+W_HITS = 1.5  # cap of the tanh-squashed hit-differential term
+HIT_DIFF_SCALE = 8.0  # rolling differential (magnitude points) at ~76% of cap
 W_MOBILITY = 2.2
+#: Max |logit| outside the KO ramp: probabilities stay within ~[0.05, 0.95].
+LOGIT_CLAMP = 3.0
 HIT_WINDOW_S = 30.0
 KO_RAMP_S = 5.0
 KO_CEILING = 0.99
@@ -93,8 +100,12 @@ def compute(fight_id: str) -> Path:
         window = (seconds >= e.t) & (seconds < e.t + HIT_WINDOW_S)
         hit_diff[window] += sign * e.magnitude
 
-    logit = W_CONTROL * control + W_HITS * hit_diff + W_MOBILITY * (mob_a - mob_b)
-    p = _logistic(logit)
+    logit = (
+        W_CONTROL * control
+        + W_HITS * np.tanh(hit_diff / HIT_DIFF_SCALE)
+        + W_MOBILITY * (mob_a - mob_b)
+    )
+    p = _logistic(np.clip(logit, -LOGIT_CLAMP, LOGIT_CLAMP))
 
     # KO constraint: ramp the winner to KO_CEILING over the last KO_RAMP_S.
     ko = next((e for e in events.events if e.type == "ko"), None)

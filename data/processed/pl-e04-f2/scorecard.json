@@ -1,0 +1,24 @@
+{
+  "fight_id": "pl-e04-f2",
+  "ours": {
+    "damage": [
+      3,
+      2
+    ],
+    "aggression": [
+      2,
+      1
+    ],
+    "control": [
+      2,
+      1
+    ],
+    "winner": "A",
+    "margin": 0.27
+  },
+  "official": {
+    "winner": "B",
+    "split": null
+  },
+  "robbery_score": 0.0
+}
