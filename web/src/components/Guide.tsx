@@ -16,6 +16,12 @@ export default function Guide({ onBack }: Props) {
         </button>
 
         <h1 className="display">How to read the instruments</h1>
+        <p>
+          <strong>This is a hackathon prototype</strong> — built in one day for the BattleBots
+          hack night. The pipeline is real and the data shown is genuinely measured, but every
+          metric is experimental, coverage is partial, and calibration is early. Read everything
+          below with that in mind.
+        </p>
         <p className="dim">
           BattleBots publishes no telemetry: no positions, no speeds, no impact data. Everything
           on this page is manufactured by computer vision over broadcast footage, then fused with

@@ -303,3 +303,12 @@
   padding-top: 12px;
   font-size: 12px;
 }
+
+.proto-badge {
+  border: 1px solid var(--recorder-orange);
+  border-radius: var(--radius);
+  color: var(--recorder-orange);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+}

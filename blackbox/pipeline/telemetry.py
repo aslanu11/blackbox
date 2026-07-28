@@ -197,10 +197,24 @@ def heatmap_png(tracks: S.Tracks, bot: str, color: str, out_dir: Path) -> str:
     ok = ~np.isnan(pos[:, 0])
     fig, ax = plt.subplots(figsize=(4, 4), dpi=120)
     if ok.any():
+        from scipy.ndimage import gaussian_filter
+
+        # Raw hist2d renders real trajectories as a single dot: one pinned-in-
+        # place cell holds most of the mass and linear scaling makes every
+        # other visited cell invisible. Gaussian-smooth the field and use a
+        # sqrt scale so the whole path shows while hot spots stay hottest.
+        # Same data, honest rendering.
+        xy = np.clip(pos[ok], 0.0, S.FLOOR_M)  # homography edge noise
+        hist, _, _ = np.histogram2d(
+            xy[:, 0], xy[:, 1],
+            bins=HEATMAP_BINS, range=[[0, S.FLOOR_M], [0, S.FLOOR_M]],
+        )
+        field = gaussian_filter(hist, sigma=1.6)
+        field = np.sqrt(field / field.max()) if field.max() > 0 else field
         cmap = LinearSegmentedColormap.from_list("bot", [(0, 0, 0, 0), color])
-        ax.hist2d(
-            pos[ok, 0], pos[ok, 1],
-            bins=HEATMAP_BINS, range=[[0, S.FLOOR_M], [0, S.FLOOR_M]], cmap=cmap,
+        ax.imshow(
+            field.T, origin="lower", extent=[0, S.FLOOR_M, 0, S.FLOOR_M],
+            cmap=cmap, interpolation="bilinear", vmin=0.0, vmax=1.0,
         )
     ax.set_xlim(0, S.FLOOR_M)
     ax.set_ylim(0, S.FLOOR_M)

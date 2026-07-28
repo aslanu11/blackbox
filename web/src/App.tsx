@@ -136,6 +136,9 @@ export default function App() {
           </span>
         </span>
         <span className="display tagline dim">FLIGHT RECORDER FOR ROBOT COMBAT</span>
+        <span className="proto-badge display" title="Hackathon prototype - built in one day; metrics are experimental">
+          PROTOTYPE
+        </span>
         <button className="guide-link display" onClick={() => showGuide(view !== "guide")}>
           {view === "guide" ? "RECORDER" : "HOW TO READ"}
         </button>
