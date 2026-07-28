@@ -295,14 +295,26 @@ def run(fight_id: FightId) -> None:
 
     steps = ["ingest", "shots", "angles", "calibrate", "track", "telemetry", "events",
              "momentum", "scorecard", "fuse", "overlay", "export"]
+    # Interactive or judgment-carrying steps are skipped when their output is
+    # already on disk: a human may have run them by hand with non-default
+    # flags (bb angles --keep-top 4, seeded tracker clicks) and a blind re-run
+    # would discard that work. Delete the artifact to force the step.
+    from . import schemas as _S
+    from .pipeline import calibrate as _cal
+
+    _done: dict[str, bool] = {
+        "ingest": (_S.FRAMES_DIR / fight_id / "track").exists(),
+        "shots": (_S.fight_dir(fight_id) / "shots.json").exists(),
+        "angles": (_S.fight_dir(fight_id) / "angles.json").exists(),
+        "calibrate": bool(_cal.load_all_calibrations(fight_id)),
+        "track": _S.exists(fight_id, "tracks"),
+    }
+
     runner = CliRunner()
     for step in steps:
-        if step == "calibrate":
-            from .pipeline import calibrate as _cal
-
-            if _cal.load_all_calibrations(fight_id):
-                typer.secho("== bb calibrate (skipped - calibration on disk)", fg=typer.colors.CYAN)
-                continue
+        if _done.get(step):
+            typer.secho(f"== bb {step} (skipped - output on disk)", fg=typer.colors.CYAN)
+            continue
         typer.secho(f"== bb {step}", fg=typer.colors.CYAN)
         result = runner.invoke(app, [step, "--fight-id", fight_id], catch_exceptions=False)
         typer.echo(result.output.rstrip())
