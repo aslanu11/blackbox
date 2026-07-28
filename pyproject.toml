@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
 dependencies = [
-    "opencv-python>=4.9",
+    "opencv-contrib-python>=4.9,<5",
     "scenedetect[opencv]>=0.6.4",
     "yt-dlp>=2024.1.1",
     "numpy>=1.26",

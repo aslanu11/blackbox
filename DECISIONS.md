@@ -139,6 +139,50 @@ all five scripted hits within ±0.5 s.
 
 ---
 
+## 2026-07-28 — `.venv` must be built on Python >= 3.11
+
+**What:** Pranav's machine had a stray `.venv` built against the system Python
+3.10 (Windows has 3.10/3.12/3.13 all installed). `pyproject.toml` requires
+`>=3.11`, so `pip install -e ".[dev]"` against that venv doesn't just fail —
+pip's resolver burns 20+ minutes and hundreds of MB re-downloading every
+scipy/opencv build back to 1.11 looking for a python-3.10-compatible set that
+satisfies `opencv-python>=4.9` (which itself now requires >=3.11). Recreated
+`.venv` with `py -3.13`; installed clean in under a minute.
+
+**Why it matters for both of you:** if `pip install -e ".[dev]"` looks like
+it's hanging rather than downloading in a straight line, check
+`.venv/Scripts/python.exe --version` (or `.venv/bin/python3 --version`)
+before waiting it out — a python-version mismatch looks exactly like a slow
+network at first glance.
+
+**Revisit if:** we ever need to support a machine without Python 3.11+.
+
+---
+
+## 2026-07-28 — `opencv-python` -> `opencv-contrib-python<5`, pinned below 5.x
+
+**What:** `pyproject.toml` pinned `opencv-python>=4.9` with no upper bound. It
+resolved to `opencv-python==5.0.0.93`, and OpenCV 5 dropped `cv2.TrackerCSRT`
+from the base package entirely (confirmed: no `cv2.TrackerCSRT_create`, no
+`cv2.legacy` namespace at all in 5.0.0). D4 (`track.py`) is written around
+CSRT — it's named "the guaranteed path" in this repo for a reason: it's the
+one classical tracker robust enough for two bots that collide and rebound.
+Switched the dependency to `opencv-contrib-python>=4.9,<5`, which still ships
+the legacy tracking module. Capped below 5.0 rather than trusting a very new
+`opencv-contrib-python` 5.x release to have carried CSRT forward — that's
+unverified and this dependency is load-bearing for Gate 1.
+
+**Why this belongs to both of you:** `opencv-python` and `opencv-contrib-python`
+conflict if both installed (`pip install -e ".[dev]"` again after pulling this
+picks up the fix cleanly, but if you already have a `.venv` with plain
+`opencv-python` in it, `pip uninstall opencv-python` first or just rebuild the
+venv).
+
+**Revisit if:** a future `opencv-contrib-python` release restores `TrackerCSRT`
+in the 5.x line and there's a reason to want it (smaller wheel, etc).
+
+---
+
 ## TEMPLATE — copy this
 
 ## YYYY-MM-DD — <one-line decision>
