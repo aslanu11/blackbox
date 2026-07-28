@@ -2,6 +2,40 @@
 
 Two people, two Claude Code sessions, one repo, working at the same time.
 
+Repo: https://github.com/aslanu11/blackbox — public from the first commit; it
+is the submission.
+
+## Session kickoff prompts
+
+**Pranav — paste this into your Claude Code session after cloning:**
+
+> Read TEAM.md, DECISIONS.md, and BLACKBOX_claude_code_handover.md sections 5,
+> 6 (Phase D), 9 and 11 if Aslan has shared it — otherwise TEAM.md has
+> everything binding. You own Phase D only: ingest.py, shots.py, calibrate.py,
+> track.py, overlay.py, and notebooks/sam2_track.ipynb. Do not edit
+> schemas.py, fixtures.py, anything under sources/, the B-phase pipeline
+> modules, or web/. In cli.py edit only the bodies of your own subcommands.
+> Start with D4 (track.py) against the fixture-replay test, then D1/D2/D3 to
+> feed it, then D5. Build shots.py behind --heuristic first; wire
+> llm.classify_wide in when Aslan lands llm.py. Fixture-first: everything
+> passes on fixture-001 before real footage. Run `bb doctor` first. Commit
+> small with conventional messages, pull --rebase before every push, push
+> straight to main. Never commit media or secrets.
+
+**Aslan — paste this into your Claude Code session in the repo:**
+
+> Read TEAM.md and DECISIONS.md. You own A5 (llm.py), Phase B (telemetry,
+> events, momentum, scorecard, fuse), Phase C (net, sources/), Phase E (web/,
+> export.py) and Phase F (Makefile targets, tests, README). Do not edit the
+> Phase D pipeline modules (ingest/shots/calibrate/track/overlay) or the
+> notebook — Pranav's session owns those. Build order: llm.py first (D2 is
+> waiting on it), then B1 → B2 → B5 → E1 → E2 → B3 → B4 → E3 → C → F.
+> Every module passes its acceptance test on fixture-001 before touching real
+> data. Acceptance numbers live in
+> data/processed/fixture-001/expected_events.json (regenerate with
+> `bb fixture`). Commit small with conventional messages, pull --rebase before
+> every push, push straight to main. Never commit media or secrets.
+
 The split below is chosen for **zero file overlap**. Neither of you should ever
 need to edit a file the other is editing. That is the whole design — it is more
 important than an even workload.
