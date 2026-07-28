@@ -1,0 +1,191 @@
+{
+  "critical_threshold": 0.3454,
+  "fights_scored": [
+    "fixture-001",
+    "pl-e01-f1",
+    "pl-e01-f2",
+    "pl-e01-f3"
+  ],
+  "fights_missing_attention": [
+    "pl-e04-f1",
+    "pl-e04-f2",
+    "pl-e04-f3"
+  ],
+  "weights": {
+    "spotlight": 0.45,
+    "authorship": 0.3,
+    "performance": 0.25
+  },
+  "bots": [
+    {
+      "name": "Minotaur",
+      "sponsor_score": 81.49,
+      "components": {
+        "spotlight": 0.5886,
+        "authorship": 1.0,
+        "performance": 1.0
+      },
+      "critical_seconds": 56.1,
+      "peak_attention": 0.5318,
+      "fights": 1,
+      "record": "1-0",
+      "confidence": 1.0,
+      "basis": [
+        "attention",
+        "events"
+      ],
+      "weapon_class": null,
+      "team_name": null,
+      "social_urls": []
+    },
+    {
+      "name": "HUGE",
+      "sponsor_score": 70.0,
+      "components": {
+        "spotlight": 1.0,
+        "authorship": 0.0,
+        "performance": 1.0
+      },
+      "critical_seconds": 64.9,
+      "peak_attention": 0.7804,
+      "fights": 1,
+      "record": "1-0",
+      "confidence": 0.6,
+      "basis": [
+        "attention"
+      ],
+      "weapon_class": null,
+      "team_name": null,
+      "social_urls": []
+    },
+    {
+      "name": "HyperShock",
+      "sponsor_score": 45.0,
+      "components": {
+        "spotlight": 1.0,
+        "authorship": 0.0,
+        "performance": 0.0
+      },
+      "critical_seconds": 64.9,
+      "peak_attention": 0.7804,
+      "fights": 1,
+      "record": "0-1",
+      "confidence": 0.6,
+      "basis": [
+        "attention"
+      ],
+      "weapon_class": "Disc spinner (vertical)",
+      "team_name": "Team HyperShock",
+      "social_urls": [
+        "https://www.hypershock.tv/",
+        "https://www.facebook.com/HyperShockTV",
+        "https://www.instagram.com/HyperShockTV",
+        "https://twitter.com/HyperShockTV",
+        "https://www.tiktok.com/@hypershocktv"
+      ]
+    },
+    {
+      "name": "Bloodsport",
+      "sponsor_score": 43.83,
+      "components": {
+        "spotlight": 0.5886,
+        "authorship": 0.5781,
+        "performance": 0.0
+      },
+      "critical_seconds": 56.1,
+      "peak_attention": 0.5318,
+      "fights": 1,
+      "record": "0-1",
+      "confidence": 1.0,
+      "basis": [
+        "attention",
+        "events"
+      ],
+      "weapon_class": "Bar spinner (horizontal)",
+      "team_name": "Bots \u2018n\u2019 Stuff Robotics",
+      "social_urls": [
+        "https://www.bloodsportbattlebot.com/"
+      ]
+    },
+    {
+      "name": "Golden Fury",
+      "sponsor_score": 29.03,
+      "components": {
+        "spotlight": 0.2007,
+        "authorship": 0.0,
+        "performance": 0.8
+      },
+      "critical_seconds": 26.0,
+      "peak_attention": 0.3916,
+      "fights": 1,
+      "record": "1-0",
+      "confidence": 0.6,
+      "basis": [
+        "attention"
+      ],
+      "weapon_class": null,
+      "team_name": null,
+      "social_urls": []
+    },
+    {
+      "name": "Malice",
+      "sponsor_score": 25.39,
+      "components": {
+        "spotlight": 0.1198,
+        "authorship": 0.0,
+        "performance": 0.8
+      },
+      "critical_seconds": 13.0,
+      "peak_attention": 0.4675,
+      "fights": 1,
+      "record": "1-0",
+      "confidence": 0.6,
+      "basis": [
+        "attention"
+      ],
+      "weapon_class": null,
+      "team_name": null,
+      "social_urls": []
+    },
+    {
+      "name": "DeathRoll",
+      "sponsor_score": 9.03,
+      "components": {
+        "spotlight": 0.2007,
+        "authorship": 0.0,
+        "performance": 0.0
+      },
+      "critical_seconds": 26.0,
+      "peak_attention": 0.3916,
+      "fights": 1,
+      "record": "0-1",
+      "confidence": 0.6,
+      "basis": [
+        "attention"
+      ],
+      "weapon_class": null,
+      "team_name": null,
+      "social_urls": []
+    },
+    {
+      "name": "End Game",
+      "sponsor_score": 5.39,
+      "components": {
+        "spotlight": 0.1198,
+        "authorship": 0.0,
+        "performance": 0.0
+      },
+      "critical_seconds": 13.0,
+      "peak_attention": 0.4675,
+      "fights": 1,
+      "record": "0-1",
+      "confidence": 0.6,
+      "basis": [
+        "attention"
+      ],
+      "weapon_class": null,
+      "team_name": null,
+      "social_urls": []
+    }
+  ]
+}

@@ -1,0 +1,498 @@
+[
+  {
+    "robot_name": "Captain Shrederator",
+    "robot_type": "Full Bodied Spinner",
+    "team_name": "Team LOGICOM",
+    "builder_name": "Brian Nave",
+    "hometown": "Ormond Beach, FL",
+    "image_urls": [
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-captain-shrederator-team.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-captain-shrederator-bot.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-captain-shrederator-captain.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-banshee-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-beta-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-big-dill-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-black-dragon-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-blip-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/12/BBWCII-ribbot-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-claw-viper-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/12/BBWCVII-cobalt-team-262x175.jpg"
+    ],
+    "career_stats": {
+      "total_matches": 26,
+      "win_percentage": "27%",
+      "total_wins": 7,
+      "losses": 19
+    },
+    "match_history": [],
+    "website_urls": [
+      "https://facebook.com/spinwinning"
+    ],
+    "product_page_url": "https://battlebots.com/robot/captain-shredderator-wcvii/",
+    "input": {
+      "url": "https://battlebots.com/robots/"
+    }
+  },
+  {
+    "robot_name": "Rusty Jr.",
+    "robot_type": "Hammer",
+    "team_name": "Hammer",
+    "builder_name": "David Eaton",
+    "hometown": "Antioch, IL",
+    "image_urls": [
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-rusty-team.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-rusty-bot.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-rusty-captain.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-banshee-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-beta-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-big-dill-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-black-dragon-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-blip-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/12/BBWCII-ribbot-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-captain-shrederator-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-claw-viper-team-262x175.jpg"
+    ],
+    "career_stats": {
+      "total_matches": 7,
+      "win_percentage": "29%",
+      "total_wins": 2,
+      "losses": 5
+    },
+    "match_history": [],
+    "website_urls": [
+      "https://www.facebook.com/teamironforce",
+      "https://www.instagram.com/teamironforce"
+    ],
+    "product_page_url": "https://battlebots.com/robot/rusty-jr-wcvii/",
+    "input": {
+      "url": "https://battlebots.com/robots/"
+    }
+  },
+  {
+    "robot_name": "DOOM",
+    "robot_type": "Articulated Bar Spinner (vertical)",
+    "team_name": "APT",
+    "builder_name": "Alejandro Pina",
+    "hometown": "Whittier, CA",
+    "image_urls": [
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-doom-team.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-doom-bot.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-doom-captain.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-banshee-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-beta-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-big-dill-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-black-dragon-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-blip-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/12/BBWCII-ribbot-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-captain-shrederator-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-claw-viper-team-262x175.jpg"
+    ],
+    "career_stats": {
+      "total_matches": 0,
+      "total_wins": 0,
+      "losses": 0
+    },
+    "match_history": [],
+    "website_urls": [
+      "https://www.youtube.com/@apt6255"
+    ],
+    "product_page_url": "https://battlebots.com/robot/doom-wcvii/",
+    "input": {
+      "url": "https://battlebots.com/robots/"
+    }
+  },
+  {
+    "robot_name": "HyperShock",
+    "robot_type": "Disc spinner (vertical)",
+    "team_name": "Team HyperShock",
+    "builder_name": "Will Bales",
+    "hometown": "Miami, FL",
+    "image_urls": [
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-hypershock-team.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-HyperShock-bot.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-hypershock-captain-Will-Bales.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-banshee-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-beta-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-big-dill-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-black-dragon-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-blip-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/12/BBWCII-ribbot-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-captain-shrederator-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-claw-viper-team-262x175.jpg"
+    ],
+    "career_stats": {
+      "total_matches": 37,
+      "win_percentage": "54%",
+      "total_wins": 20,
+      "losses": 17
+    },
+    "match_history": [],
+    "website_urls": [
+      "https://www.hypershock.tv/",
+      "https://www.facebook.com/HyperShockTV",
+      "https://www.instagram.com/HyperShockTV",
+      "https://twitter.com/HyperShockTV",
+      "https://www.tiktok.com/@hypershocktv"
+    ],
+    "product_page_url": "https://battlebots.com/robot/hypershock-wcvii/",
+    "input": {
+      "url": "https://battlebots.com/robots/"
+    }
+  },
+  {
+    "robot_name": "Kraken",
+    "robot_type": "Kinetic Krusher",
+    "team_name": "CE Robots",
+    "builder_name": "Matthew Spurk",
+    "hometown": "Titusville, FL",
+    "image_urls": [
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-kraken-team.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-kraken-bot.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-kraken-captain.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-banshee-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-beta-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-big-dill-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-black-dragon-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-blip-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/12/BBWCII-ribbot-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-captain-shrederator-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-claw-viper-team-262x175.jpg"
+    ],
+    "career_stats": {
+      "total_matches": 28,
+      "win_percentage": "21%",
+      "total_wins": 6,
+      "losses": 22
+    },
+    "match_history": [],
+    "website_urls": [
+      "https://www.cerobots.com/",
+      "https://www.facebook.com/KrakenBattleBot",
+      "https://www.instagram.com/KrakenBattleBot"
+    ],
+    "product_page_url": "https://battlebots.com/robot/kraken-wcvii/",
+    "input": {
+      "url": "https://battlebots.com/robots/"
+    }
+  },
+  {
+    "robot_name": "HYDRA",
+    "robot_type": "Launcher",
+    "team_name": "Team Whyachi",
+    "builder_name": "Jake Ewert",
+    "hometown": "Dorchester, Wisconsin",
+    "image_urls": [
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-hydra-team.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-hydra-bot.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-hydra-captain-Jake-Ewert.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-banshee-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-beta-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-big-dill-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-black-dragon-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-blip-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/12/BBWCII-ribbot-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-captain-shrederator-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-claw-viper-team-262x175.jpg"
+    ],
+    "career_stats": {
+      "total_matches": 27,
+      "win_percentage": "74%",
+      "total_wins": 20,
+      "losses": 7
+    },
+    "match_history": [],
+    "website_urls": [
+      "https://www.teamwhyachi.com/",
+      "https://www.facebook.com/Whyachi",
+      "https://www.instagram.com/teamwhyachi"
+    ],
+    "product_page_url": "https://battlebots.com/robot/hydra-wcvii/",
+    "input": {
+      "url": "https://battlebots.com/robots/"
+    }
+  },
+  {
+    "robot_name": "Quantum",
+    "robot_type": "Crusher",
+    "team_name": "Robo Challenge",
+    "builder_name": "James & Grant Cooper",
+    "hometown": "Birmingham, UK",
+    "image_urls": [
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-quantum-team.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-Quantum-bot.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-quantum-captains.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-banshee-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-beta-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-big-dill-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-black-dragon-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-blip-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/12/BBWCII-ribbot-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-captain-shrederator-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-claw-viper-team-262x175.jpg"
+    ],
+    "career_stats": {
+      "total_matches": 11,
+      "win_percentage": "64%",
+      "total_wins": 7,
+      "losses": 4
+    },
+    "match_history": [],
+    "website_urls": [
+      "https://www.facebook.com/spectrerobot",
+      "https://www.instagram.com/robochallenge"
+    ],
+    "product_page_url": "https://battlebots.com/robot/quantum-wcvii/",
+    "input": {
+      "url": "https://battlebots.com/robots/"
+    }
+  },
+  {
+    "robot_name": "LUCKY!",
+    "robot_type": "Flipper",
+    "team_name": "TKO ROBOTICS",
+    "builder_name": "Mark Demers",
+    "hometown": "Ottawa, Ontario, Canada",
+    "image_urls": [
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-lucky-team.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-lucky-bot.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-lucky-captain.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-banshee-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-beta-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-big-dill-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-black-dragon-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-blip-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/12/BBWCII-ribbot-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-captain-shrederator-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-claw-viper-team-262x175.jpg"
+    ],
+    "career_stats": {
+      "total_matches": 24,
+      "win_percentage": "42%",
+      "total_wins": 10,
+      "losses": 14
+    },
+    "match_history": [],
+    "website_urls": [
+      "https://www.facebook.com/tkorobotics"
+    ],
+    "product_page_url": "https://battlebots.com/robot/lucky-wcvii/",
+    "input": {
+      "url": "https://battlebots.com/robots/"
+    }
+  },
+  {
+    "robot_name": "Bloodsport",
+    "robot_type": "Bar spinner (horizontal)",
+    "team_name": "Bots ‘n’ Stuff Robotics",
+    "builder_name": "Justin Marple",
+    "hometown": "Cambridge MA",
+    "image_urls": [
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-bloodsport-team.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-bloodsport-bot.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-bloodsport-captain.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-banshee-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-beta-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-big-dill-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-black-dragon-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-blip-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-captain-shrederator-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-claw-viper-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/12/BBWCVII-cobalt-team-262x175.jpg"
+    ],
+    "career_stats": {
+      "total_matches": 28,
+      "win_percentage": "61%",
+      "total_wins": 17,
+      "losses": 11
+    },
+    "match_history": [],
+    "website_urls": [
+      "https://www.bloodsportbattlebot.com/"
+    ],
+    "product_page_url": "https://battlebots.com/robot/bloodsport-wcvii/",
+    "input": {
+      "url": "https://battlebots.com/robots/"
+    }
+  },
+  {
+    "robot_name": "Ominous",
+    "robot_type": "Drum spinner",
+    "team_name": "Ominous",
+    "builder_name": "Tim Bouwens",
+    "hometown": "Tilburg, The Netherlands",
+    "image_urls": [
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-ominous-team.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-ominous-bot.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-ominous-captain.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-banshee-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-beta-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-big-dill-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-black-dragon-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-blip-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/12/BBWCII-ribbot-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-captain-shrederator-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-claw-viper-team-262x175.jpg"
+    ],
+    "career_stats": {
+      "total_matches": 5,
+      "win_percentage": "20%",
+      "total_wins": 1,
+      "losses": 4
+    },
+    "match_history": [],
+    "website_urls": [
+      "https://www.facebook.com/OminousBattleBots",
+      "https://www.instagram.com/OminousBattleBots"
+    ],
+    "product_page_url": "https://battlebots.com/robot/ominous-wcvii/",
+    "input": {
+      "url": "https://battlebots.com/robots/"
+    }
+  },
+  {
+    "robot_name": "Monsoon",
+    "robot_type": "Bar spinner (vertical)",
+    "team_name": "Team Monsoon",
+    "builder_name": "Tom Brewster",
+    "hometown": "Coventry, United Kingdom",
+    "image_urls": [
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-monsoon-team.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-monsoon-bot.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-monsoon-Tom-Brewster-captain.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-banshee-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-beta-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-big-dill-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-black-dragon-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-blip-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/12/BBWCII-ribbot-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-captain-shrederator-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-claw-viper-team-262x175.jpg"
+    ],
+    "career_stats": {
+      "total_matches": 17,
+      "win_percentage": "53%",
+      "total_wins": 9,
+      "losses": 8
+    },
+    "match_history": [],
+    "website_urls": [
+      "https://www.teammonsoon.co.uk/",
+      "https://www.monsoonrobotics.co.uk/",
+      "https://www.facebook.com/monsoonrobot",
+      "https://www.twitter.com/monsoonrobot",
+      "https://www.instagram.com/monsoonrobot"
+    ],
+    "product_page_url": "https://battlebots.com/robot/monsoon-wcvii/",
+    "input": {
+      "url": "https://battlebots.com/robots/"
+    }
+  },
+  {
+    "robot_name": "Starchild",
+    "robot_type": "Thwackbot",
+    "team_name": "Omega Team",
+    "builder_name": "Brandon Zalinsky",
+    "hometown": "Hudson, NH",
+    "image_urls": [
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-starchild-team.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-starchild-bot.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-starchild-captain.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-banshee-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-beta-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-big-dill-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-black-dragon-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-blip-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/12/BBWCII-ribbot-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-captain-shrederator-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-claw-viper-team-262x175.jpg"
+    ],
+    "career_stats": {
+      "total_matches": 4,
+      "win_percentage": "0%",
+      "total_wins": 0,
+      "losses": 4
+    },
+    "match_history": [],
+    "website_urls": [
+      "https://www.omega-team.com/",
+      "https://www.facebook.com/AberrantRobotics",
+      "https://www.instagram.com/aberrantrobotics",
+      "https://www.aberrantrobotics.com/"
+    ],
+    "product_page_url": "https://battlebots.com/robot/starchild-wcvii/",
+    "input": {
+      "url": "https://battlebots.com/robots/"
+    }
+  },
+  {
+    "robot_name": "Slammo!",
+    "robot_type": "Grappler",
+    "team_name": "Team Danby",
+    "builder_name": "Craig Danby, Chris Danby",
+    "hometown": "Raleigh, NC",
+    "image_urls": [
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-slammo-team.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-slammo-bot.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-slammo-captain.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-banshee-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-beta-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-big-dill-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-black-dragon-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-blip-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/12/BBWCII-ribbot-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-captain-shrederator-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-claw-viper-team-262x175.jpg"
+    ],
+    "career_stats": {
+      "total_matches": 10,
+      "win_percentage": "20%",
+      "total_wins": 2,
+      "losses": 8
+    },
+    "match_history": [],
+    "website_urls": [
+      "https://teamdanby.com/",
+      "https://facebook.com/teamdanby",
+      "https://instagram.com/teamdanby",
+      "https://twitter.com/teamdanby"
+    ],
+    "product_page_url": "https://battlebots.com/robot/slammo-wcvii/",
+    "input": {
+      "url": "https://battlebots.com/robots/"
+    }
+  },
+  {
+    "robot_name": "Free Shipping",
+    "robot_type": "Disc spinner (vertical)",
+    "team_name": "Team Special Delivery",
+    "builder_name": "Gary Gin",
+    "hometown": "San Leandro, CA",
+    "image_urls": [
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-free-shipping-team.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-free-shipping-bot.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-free-shipping-captain-Gary-Gin.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-banshee-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-beta-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-big-dill-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-black-dragon-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-blip-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/12/BBWCII-ribbot-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-captain-shrederator-team-262x175.jpg",
+      "https://battlebots.com/wp-content/uploads/2022/11/BB2022-claw-viper-team-262x175.jpg"
+    ],
+    "career_stats": {
+      "total_matches": 18,
+      "win_percentage": "33%",
+      "total_wins": 6,
+      "losses": 12
+    },
+    "match_history": [],
+    "website_urls": [
+      "https://www.facebook.com/freeshippingbot"
+    ],
+    "product_page_url": "https://battlebots.com/robot/free-shipping-wcvii/",
+    "input": {
+      "url": "https://battlebots.com/robots/"
+    }
+  }
+]
